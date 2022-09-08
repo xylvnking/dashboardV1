@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import { useRouter } from 'next/router'
+import {useAuthState} from "react-firebase-hooks/auth"
 
 // this page needs to be able to read from firebase using the router query, if it exists
 // collection would be artist[0]
@@ -10,10 +11,14 @@ import { useRouter } from 'next/router'
 
 // http://localhost:3000/artistname?song=songname
 
-const artistCollection = {
-  artistMetadata: {
-      name: 'artistName',
-      uid: 'yejjhfb4hbth4j5b4jynjkg', 
+// the artists will be created by me when I actually upload files to them, so I can enter anything I want
+
+// .collection("artists").where("metadata.artistName", "==", "artistNameFromQuery")
+
+const artistName = {
+  metadata: {
+      artistName: 'artistName',
+      // uid: 'yejjhfb4hbth4j5b4jynjkg', 
       email: 'artistemail@email.com',
       whateverelse: 'other data',
       coverPhoto: 'www.someurl.com',

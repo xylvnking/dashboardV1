@@ -3,6 +3,7 @@ import {useAuthState} from "react-firebase-hooks/auth"
 import { db, auth, provider } from '../firebase-config';
 import { signInWithPopup, signOut } from 'firebase/auth'
 
+import { collection, addDoc, doc, getDoc, setDoc, updateDoc } from "firebase/firestore"; 
 
 export default function Auth() {
 
@@ -11,6 +12,7 @@ export default function Auth() {
     const signInWithGoogle = async () => {
         await signInWithPopup(auth, provider).then((result) => {
             console.log(result.user)
+            // checkIfNewClient(result.user)
         })
         .catch(function (error) {
             console.error("there was an error signing in", error);
@@ -23,6 +25,26 @@ export default function Auth() {
             console.error("there was an error signing out", error);
         })
     }
+
+    // const createNewClient = async (user) => {
+    //     try {
+    //         // await setDoc(doc(db, artists, 'artistName'), {
+    //         await setDoc(doc(db, artists, 'user.email'), {
+    //             data: 'data'
+    //         });
+    //     } catch (error) {
+    //         console.error("Error adding document: ", error);
+    //     }
+    // }
+
+    // const checkIfNewClient = async (user) => {
+    //     const docRef = doc(db, artists, 'artistName')
+    //     const docSnap = await getDoc(docRef);
+    //     if (docSnap.exists()) {
+    //     } else {
+    //         createNewClient(user)
+    //     }
+    // }
 
     return (
         <div>
