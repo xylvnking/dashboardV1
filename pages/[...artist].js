@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import { useRouter } from 'next/router'
 
 // this page needs to be able to read from firebase using the router query, if it exists
