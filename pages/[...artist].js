@@ -1,6 +1,10 @@
 import React, {useState, useEffect} from 'react'
 import { useRouter } from 'next/router'
 import {useAuthState} from "react-firebase-hooks/auth"
+import styles from '../styles/Home.module.css'
+import dashStyles from '../styles/Dashboard.module.scss'
+
+
 
 // this page needs to be able to read from firebase using the router query, if it exists
 // collection would be artist[0]
@@ -39,20 +43,36 @@ const artistName = {
               paidFor: true,
               dateRawFilesReceived: 'date',
               dateReleased: 'date',
-              backupLocation: 'www.someurl.com0'
+              backupLocation: 'www.someurl.com'
           },
           fileVersions: [
               {
                   fileVersionName: `artistName-songName-dy-13-01-2022-0`,
                   dateAdded: `January 1, 2022 at 12:00:00 am UTC-4`,
-                  revisionNote: `this is a revision note`,
-                  jobType: `mix or master`
+                  revisionNote: `this is a revision note for first song`,
+                  jobType: `mix`
+              },
+              {
+                  fileVersionName: `artistName-songName-dy-13-01-2022-1`,
+                  dateAdded: `January 2, 2022 at 12:00:00 am UTC-4`,
+                  revisionNote: `this is a revision note for second song`,
+                  jobType: `mix`
+              },
+              {
+                  fileVersionName: `artistName-songName-dy-13-01-2022-2`,
+                  dateAdded: `January 3, 2022 at 12:00:00 am UTC-4`,
+                  revisionNote: `this is a revision note for third song`,
+                  jobType: `mix`
               },
               
           ]
       }
   }
 }
+
+
+
+
 
 export default function Artist(props) {
   const router = useRouter()
@@ -62,9 +82,13 @@ export default function Artist(props) {
 
   return (
     <main>
-      <h1>{artist}</h1>
-      <h1>{song}</h1>
-      <h1>{props.artistName}</h1>
+      <section className={dashStyles.navbar}>
+
+        <h1>{artist}</h1>
+        <h1>{song}</h1>
+        <h1>{props.artistName}</h1>
+      </section>
+      <h1> this should have no style</h1>
     </main>
   )
 }

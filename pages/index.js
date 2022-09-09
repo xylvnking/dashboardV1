@@ -16,11 +16,11 @@ export default function Home() {
 
       <Auth />
       <main>
-
         <Artist
           artistName='artistnnaaaame'
         />
-        
+
+
         
       </main>
 

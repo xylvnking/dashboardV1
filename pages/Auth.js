@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react'
 import {useAuthState} from "react-firebase-hooks/auth"
 import { db, auth, provider } from '../firebase-config';
 import { signInWithPopup, signOut } from 'firebase/auth'
+import { fakeData } from './api/fakeData'
 
 import { collection, addDoc, doc, getDoc, setDoc, updateDoc } from "firebase/firestore"; 
 
@@ -25,29 +26,20 @@ export default function Auth() {
             console.error("there was an error signing out", error);
         })
     }
+    
+    const createFakeData = async () => {
+        fakeData.forEach(x => console.log(x))
+        fakeData.forEach(x => {
+            setDoc(doc(db, 'artists', x.metadata.artistName), x)
+        }).catch((error) => {
+            console.log(error)
+        })
 
-    // const createNewClient = async (user) => {
-    //     try {
-    //         // await setDoc(doc(db, artists, 'artistName'), {
-    //         await setDoc(doc(db, artists, 'user.email'), {
-    //             data: 'data'
-    //         });
-    //     } catch (error) {
-    //         console.error("Error adding document: ", error);
-    //     }
-    // }
-
-    // const checkIfNewClient = async (user) => {
-    //     const docRef = doc(db, artists, 'artistName')
-    //     const docSnap = await getDoc(docRef);
-    //     if (docSnap.exists()) {
-    //     } else {
-    //         createNewClient(user)
-    //     }
-    // }
+    }
 
     return (
         <div>
+            <button onClick={() => createFakeData()}>reset database</button>
             {
                 userAuth
                 ?
