@@ -11,9 +11,17 @@ import {useAuthState} from "react-firebase-hooks/auth"
 
 // http://localhost:3000/artistname?song=songname
 
+
+
 // the artists will be created by me when I actually upload files to them, so I can enter anything I want
 
 // .collection("artists").where("metadata.artistName", "==", "artistNameFromQuery")
+
+// you get access to their uid when they log in, so you could search for the document which contains that
+
+// it's a little scuffed of a workflow but at this scale since it's specific to me it works fine
+
+// .collection("artists").where("uid", "==", "the uid of the signed in artist")
 
 const artistName = {
   metadata: {

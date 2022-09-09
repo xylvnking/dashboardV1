@@ -14,11 +14,13 @@ export default function Home() {
         <link rel="icon" href="favicon.ico?v=1.1" />
       </Head>
 
+      <Auth />
       <main>
-        <Auth />
+
         <Artist
           artistName='artistnnaaaame'
         />
+        
         
       </main>
 
