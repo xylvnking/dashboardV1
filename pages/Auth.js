@@ -30,11 +30,10 @@ export default function Auth() {
     const createFakeData = async () => {
         fakeData.forEach(x => console.log(x))
         fakeData.forEach(x => {
-            setDoc(doc(db, 'artists', x.metadata.artistName), x)
-        }).catch((error) => {
-            console.log(error)
+            setDoc(doc(db, 'artists', x.metadata.artistName), x).catch((error) => {
+                console.log(error)
+            })
         })
-
     }
 
     return (

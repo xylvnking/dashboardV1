@@ -45,7 +45,7 @@ export const fakeData = [
     {
         metadata: {
             artistName: 'artistName1',
-            // uid: 'yejjhfb4hbth4j5b4jynjkg', 
+            uid: 'K9Q8HllpqcMwvWXgZcE44X3DVum2', 
             email: 'artistemail@email.com',
             whateverelse: 'other data',
             coverPhoto: 'www.someurl.com',
@@ -87,7 +87,7 @@ export const fakeData = [
     {
         metadata: {
             artistName: 'artistName2',
-            // uid: 'yejjhfb4hbth4j5b4jynjkg', 
+            uid: 'QYTUFmkQ9TYQvDTqL3LEcxgt6S43', 
             email: 'artistemail@email.com',
             whateverelse: 'other data',
             coverPhoto: 'www.someurl.com',

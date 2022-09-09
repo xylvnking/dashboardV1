@@ -6,6 +6,10 @@ remember that i think the audio file html tag automatically downloads the file b
 
 # learned
 
+## so
+
+[Using async/await with a forEach loop](https://stackoverflow.com/questions/37576685/using-async-await-with-a-foreach-loop)
+
 ## next
 [dynamic catch all routes](https://nextjs.org/docs/routing/dynamic-routes)
 
