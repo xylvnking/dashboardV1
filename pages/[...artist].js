@@ -14,16 +14,9 @@ import { db, auth, provider } from '../firebase-config';
 import { doc, onSnapshot, collection, query, where, getDoc, getDocs, updateDoc } from "firebase/firestore";
 
 import AudioNav from './Components/AudioNav';
+import Song from './Components/Song';
 
 import TextareaAutosize from 'react-textarea-autosize';
-
-
-
-
-
-
-
-
 
 // this page needs to be able to read from firebase using the router query, if it exists
 // collection would be artist[0]
@@ -54,7 +47,7 @@ import TextareaAutosize from 'react-textarea-autosize';
 
 const artistTemp = 'artistName1'
 
-
+let revisionTypingTimeout
 
 export default function Artist(props) {
 
@@ -64,6 +57,7 @@ export default function Artist(props) {
   
   const router = useRouter()
   const { artist, song, ok } = router.query
+
 
   // get data
   useEffect(() => { // could you turn this into a next api call?
@@ -89,67 +83,36 @@ export default function Artist(props) {
           setArtistData(doc.data())
         });
 
-
-
-
-
-        // const docRef = doc(db, 'artists', 'dylanking6132')
-        // const songCollectionRef = db.collection('artists').doc(docRef).collection('songsub').doc('sonsubdoc1');
-        // const messageRef = db.collection('artists').doc('dylanking6132').collection('songsub').doc('songsubdoc1');
-        // const doc2 = docRef.collection('songsub').doc('sonsubdoc1')
-        // const docSnap = await getDoc(messageRef);
-
-        const docRef = doc(db, "artists", "dylanking6132", 'songsub', 'sonsubdoc1');
-        const docSnap = await getDoc(docRef);
-
-
-
-        if (docSnap.exists()) {
-          console.log("Document data:", docSnap.data());
-        } else {
-          // doc.data() will be undefined in this case
-          console.log("No such document!");
-        }
-
-
-
-
-
       }
       getDataAuthorized()
     } 
     
     if (artist && userAuth && artist[0] == userAuth.uid) {
-      console.log('user is on thier own')
+      // console.log('user is on thier own')
       setArtistIsLoggedInAndOnTheirOwnPage(true)
     }
     
 
   }, [userAuth, artist])
 
-  const saveRevisionNote = (event) => {
-    const docRef = doc(db, 'artists', artistData.metadata.artistName);
-    // updateDoc(docRef, {
-    //   "metadata.whateverelse": 'this should be a new thing!'
-    // })
-    updateDoc(docRef, {
-      songs: artistData.songs
-      // songs[0].fileVersions[0].jobType: 'updated from client'
-      // "metadata.whateverelse": 'this should be a new thing!'
-    })
+  const saveRevisionNote = (event, songIndex, fileVersionIndex) => {
 
-    // get the index of the song be edited and pass it in
-    // updateDoc(docRef, {
-    //   metadata: {
-    //     whateverelse: 'changed this from client'
-    //   }
-    // })
+    const artistDataClone = JSON.parse(JSON.stringify(artistData)) // clone state
+
+    artistDataClone.songs[songIndex].fileVersions[fileVersionIndex].revisionNote = event // update clone
+    setArtistData(artistDataClone) // set state with clone
+
+    const docRef = doc(db, 'artists', artistData.metadata.artistName); // get reference to doc
+
+    clearTimeout(revisionTypingTimeout) // clear timer
+    revisionTypingTimeout = setTimeout(() => { // use timer
+      updateDoc(docRef, artistDataClone) // update firebase
+    }, 500)
   }
 
-
-
   const check = () => {
-    console.log(artistData)
+    // console.log(artistData)
+    // console.log(dataTest)
     // console.log(userAuth)
     // console.log(artist[0])
   }
@@ -178,10 +141,13 @@ export default function Artist(props) {
                 <h1>artist name stylized: {artistData.metadata.artistNameStylized}</h1>
                 <h1>uid: {artistData.metadata.uid}</h1>
                 <h1>email: {artistData.metadata.email}</h1>
-                {artistData.songs.map((x, songindex) => {
+                {/* {artistData.songs.map((x, songIndex) => { */}
+
+                {/* THIS SHOULD BE ITS OWN COMPONENT SO IT CAN HAVE ITS OWN STATE */}
+                {artistData.songs.map((x, songIndex) => {
                   
                   return (
-                    <ul key= {songindex}>
+                    <ul key= {songIndex}>
                       <h2>song name: {x.songMetadata.songName}</h2>
                       <li>paid for: {x.songMetadata.paidFor ? 'yes' : 'no'}</li>
                       <li>date raw files received: {x.songMetadata.dateRawFilesReceived}</li>
@@ -189,9 +155,9 @@ export default function Artist(props) {
                       <li>backup location: {x.songMetadata.backupLocation}</li>
                       <li>date of most recent edit: {x.songMetadata.dateOfMostRecentEdit}</li>
 
-                          {x.fileVersions.map((x, index) => {
+                          {x.fileVersions.map((x, fileVersionIndex) => {
                             return (
-                              <ul key={index}>
+                              <ul key={fileVersionIndex}>
                                 <li>file version name: {x.fileVersionName}</li>
                                 <li>date added: {x.dateAdded}</li>
                                 <li>Revision note: {x.revisionNote}</li>
@@ -199,7 +165,7 @@ export default function Artist(props) {
                                     defaultValue={x.revisionNote}
                                     className={artistStyles.revisionTextArea}
                                     // get song index here
-                                    // onChange={(e) => handleTyping(e.target.value, song)} 
+                                    onChange={(e) => saveRevisionNote(e.target.value, songIndex, fileVersionIndex)} 
                                 />
                                 <li>Job type: {x.jobType}</li>
                               </ul>

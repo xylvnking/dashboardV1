@@ -73,11 +73,24 @@ const docRef = doc(db, 'artists', artistData.metadata.artistName);
 the syntax is as follows to create a reference to a document within a subcollection: 
 ```js
 const docRef = doc(db, "collectionname", "documentname", 'subcollectionname', 'documentinsubcollectionname');
+const docSnap = await getDoc(docRef);
+
+        if (docSnap.exists()) {
+          console.log("Document data:", docSnap.data());
+        } else {
+          // doc.data() will be undefined in this case
+          console.log("No such document!");
+        }
 ```
 It's way easier than I thought it would be. All firebase queries are shallow, so you can hold other data within subcollections which doesn't need to be read every time the higher level document is.
 [this stack overflow answer is how i learnt this](https://stackoverflow.com/a/69313831/19101255)
 
 ## react
+
+###
+
+In retrospect this should have been obvious, but alas.
+[How can I set state on individual elements in a mapped function using React?](https://stackoverflow.com/a/71065488/19101255) (create a component for them)
 
 ### arrays as jsx children
 
