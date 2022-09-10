@@ -2,6 +2,7 @@ remember that i think the audio file html tag automatically downloads the file b
 
 ## packages
 [react firebase hooks](https://www.npmjs.com/package/react-firebase-hooks)
+[react-textarea-autozie](https://www.npmjs.com/package/react-textarea-autosize)
 
 
 # learned
@@ -24,7 +25,7 @@ the way i ahd it in the pre alpha was cumbersome - i had to keep iterating over 
 
 ### react router query
 
-when using react router query params and a useEffect on load, remember that the query isn't available until hydration and that the parameter should also be a dependecy of the useEffect
+[when using react router query params and a useEffect on load, remember that the query isn't available until hydration and that the parameter should also be a dependecy of the useEffect](https://github.com/vercel/next.js/discussions/11484)
 
 ```js
   const router = useRouter()

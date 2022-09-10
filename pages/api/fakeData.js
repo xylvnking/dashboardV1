@@ -44,13 +44,13 @@
 export const fakeData = [
     {
         metadata: {
-            artistName: 'artistname1',
+            artistName: 'dylanking6132',
             artistNameStylized: 'The fi    rst Artist!!',
             uid: 'K9Q8HllpqcMwvWXgZcE44X3DVum2', 
-            email: 'artistemail@email.com',
+            email: 'dylanking6132@gmail.com',
             whateverelse: 'other data',
             coverPhoto: 'www.someurl.com',
-            profilePhoto: 'www.someurl.com'
+            profilePhoto: 'https://lh3.googleusercontent.com/a-/AFdZucqQ6ZlopecV3GYA95ouqR7HYrJ6Z5d8KChaQoOn3g=s96-c'
             
         },
         songs: [
@@ -60,7 +60,8 @@ export const fakeData = [
                     paidFor: true,
                     dateRawFilesReceived: 'date',
                     dateReleased: 'date',
-                    backupLocation: 'www.someurl.com'
+                    backupLocation: 'www.someurl.com',
+                    dateOfMostRecentEdit: 'some date object'
                 },
                 fileVersions: [
                     {
@@ -90,7 +91,8 @@ export const fakeData = [
                     paidFor: true,
                     dateRawFilesReceived: 'date',
                     dateReleased: 'date',
-                    backupLocation: 'www.someurl.com'
+                    backupLocation: 'www.someurl.com',
+                    dateOfMostRecentEdit: 'some date object'
                 },
                 fileVersions: [
                     {
@@ -118,13 +120,13 @@ export const fakeData = [
     },
     {
         metadata: {
-            artistName: 'artistname2',
+            artistName: 'dylanking600',
             artistNameStylized: 'The SEcOND Artist!!',
             uid: 'QYTUFmkQ9TYQvDTqL3LEcxgt6S43', 
-            email: 'artistemail@email.com',
+            email: 'dylan.king600@gmail.com',
             whateverelse: 'other data',
             coverPhoto: 'www.someurl.com',
-            profilePhoto: 'www.someurl.com'
+            profilePhoto: 'https://lh3.googleusercontent.com/a-/AFdZucr6-80QvFuYjgw0YWqJiwQfQnjXYH3jsw6S55zflQ=s96-c'
             
         },
         songs: [
@@ -134,7 +136,8 @@ export const fakeData = [
                     paidFor: true,
                     dateRawFilesReceived: 'date',
                     dateReleased: 'date',
-                    backupLocation: 'www.someurl.com'
+                    backupLocation: 'www.someurl.com',
+                    dateOfMostRecentEdit: 'some date object'
                 },
                 fileVersions: [
                     {
@@ -164,7 +167,8 @@ export const fakeData = [
                     paidFor: true,
                     dateRawFilesReceived: 'date',
                     dateReleased: 'date',
-                    backupLocation: 'www.someurl.com'
+                    backupLocation: 'www.someurl.com',
+                    dateOfMostRecentEdit: 'some date object'
                 },
                 fileVersions: [
                     {
