@@ -7,6 +7,10 @@ remember that i think the audio file html tag automatically downloads the file b
 
 # learned
 
+## sass/next
+
+you ahve to restart the dev server when adding a new scss module
+
 ## data structuring
 
 yeah the structure I'm using this time makes so much more sense.
@@ -22,6 +26,10 @@ the way i ahd it in the pre alpha was cumbersome - i had to keep iterating over 
 
 ## next
 [dynamic catch all routes](https://nextjs.org/docs/routing/dynamic-routes)
+
+## images
+
+next images are weird and i don't use them enough to justify going in depth with them right now. they have to be wrapped in a div or something else to work like you'd expect, and i don't know why some css doesn't work on them at all, and some works only if you put it directly on with style={{}}. [zindex issue](https://github.com/vercel/next.js/discussions/30259)
 
 ### react router query
 
@@ -45,8 +53,29 @@ the way i ahd it in the pre alpha was cumbersome - i had to keep iterating over 
 
 ## firebase
 
+[query a collection to find all documents who have subcollections which contain data matching a condition](https://firebase.blog/posts/2019/06/understanding-collection-group-queries)
+
 [get all collections (node only)](https://googleapis.dev/nodejs/firestore/latest/Firestore.html#listCollections)
 
+### updating nested data fields with updateDoc()
+
+[You need to use dot notation to be able to update a single field](https://stackoverflow.com/a/49151326/19101255)
+
+```js
+const docRef = doc(db, 'artists', artistData.metadata.artistName);
+    updateDoc(docRef, {
+      "metadata.whateverelse": 'this should be a new thing!'
+    })
+```
+
+### accessing nested subcollections
+
+the syntax is as follows to create a reference to a document within a subcollection: 
+```js
+const docRef = doc(db, "collectionname", "documentname", 'subcollectionname', 'documentinsubcollectionname');
+```
+It's way easier than I thought it would be. All firebase queries are shallow, so you can hold other data within subcollections which doesn't need to be read every time the higher level document is.
+[this stack overflow answer is how i learnt this](https://stackoverflow.com/a/69313831/19101255)
 
 ## react
 
