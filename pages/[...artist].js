@@ -145,7 +145,19 @@ export default function Artist(props) {
 
                 {/* THIS SHOULD BE ITS OWN COMPONENT SO IT CAN HAVE ITS OWN STATE */}
                 {artistData.songs.map((x, songIndex) => {
+                  return (
+                    <Song 
+                      key={songIndex}
+                      songData={x}
+                      songIndex={songIndex}
+                      saveRevisionNote={saveRevisionNote}
+                    />
+
+                  )
                   
+                })}
+
+                {/* {artistData.songs.map((x, songIndex) => {
                   return (
                     <ul key= {songIndex}>
                       <h2>song name: {x.songMetadata.songName}</h2>
@@ -154,7 +166,6 @@ export default function Artist(props) {
                       <li>date released: {x.songMetadata.dateReleased}</li>
                       <li>backup location: {x.songMetadata.backupLocation}</li>
                       <li>date of most recent edit: {x.songMetadata.dateOfMostRecentEdit}</li>
-
                           {x.fileVersions.map((x, fileVersionIndex) => {
                             return (
                               <ul key={fileVersionIndex}>
@@ -164,7 +175,6 @@ export default function Artist(props) {
                                 <TextareaAutosize 
                                     defaultValue={x.revisionNote}
                                     className={artistStyles.revisionTextArea}
-                                    // get song index here
                                     onChange={(e) => saveRevisionNote(e.target.value, songIndex, fileVersionIndex)} 
                                 />
                                 <li>Job type: {x.jobType}</li>
@@ -173,8 +183,7 @@ export default function Artist(props) {
                           })}
                     </ul>
                   )
-                  // console.log(x.songMetadata.songName)
-                })}
+                })} */}
 
             </div>
           }
