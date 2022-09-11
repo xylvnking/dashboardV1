@@ -18,33 +18,6 @@ import Song from './Components/Song';
 
 import TextareaAutosize from 'react-textarea-autosize';
 
-// this page needs to be able to read from firebase using the router query, if it exists
-// collection would be artist[0]
-  // document names are predetermined
-    // songName would be either artist[1] or song (from the ?song=somesongname parameter)
-
-// then allow writes if they are authorized
-
-// http://localhost:3000/artistname?song=songname
-
-
-
-// the artists will be created by me when I actually upload files to them, so I can enter anything I want
-
-// .collection("artists").where("metadata.artistName", "==", "artistNameFromQuery")
-
-// you get access to their uid when they log in, so you could search for the document which contains that
-
-// it's a little scuffed of a workflow but at this scale since it's specific to me it works fine
-
-// .collection("artists").where("uid", "==", "the uid of the signed in artist")
-
-
-
-
-
-// need to get reference to their artist name when they sign in
-
 const artistTemp = 'artistName1'
 
 let revisionTypingTimeout
@@ -87,28 +60,12 @@ export default function Artist(props) {
       getDataAuthorized()
     } 
     
+    // check if the artist is logged in AND at their own url
     if (artist && userAuth && artist[0] == userAuth.uid) {
       // console.log('user is on thier own')
       setArtistIsLoggedInAndOnTheirOwnPage(true)
     }
-    
-
   }, [userAuth, artist])
-
-  const saveRevisionNote = (event, songIndex, fileVersionIndex) => {
-
-    const artistDataClone = JSON.parse(JSON.stringify(artistData)) // clone state
-
-    artistDataClone.songs[songIndex].fileVersions[fileVersionIndex].revisionNote = event // update clone
-    setArtistData(artistDataClone) // set state with clone
-
-    const docRef = doc(db, 'artists', artistData.metadata.artistName); // get reference to doc
-
-    clearTimeout(revisionTypingTimeout) // clear timer
-    revisionTypingTimeout = setTimeout(() => { // use timer
-      updateDoc(docRef, artistDataClone) // update firebase
-    }, 500)
-  }
 
   const check = () => {
     // console.log(artistData)
@@ -122,7 +79,7 @@ export default function Artist(props) {
     <AudioNav/>
       <main>
         <button onClick={() => check()}>CHECK</button>
-        <button onClick={() => saveRevisionNote()}>save to db</button>
+        {/* <button onClick={() => }>nothing rn</button> */}
 
           {
             artistData &&
@@ -143,18 +100,16 @@ export default function Artist(props) {
                 <h1>email: {artistData.metadata.email}</h1>
                 {/* {artistData.songs.map((x, songIndex) => { */}
 
-                {/* THIS SHOULD BE ITS OWN COMPONENT SO IT CAN HAVE ITS OWN STATE */}
                 {artistData.songs.map((x, songIndex) => {
                   return (
                     <Song 
                       key={songIndex}
-                      songData={x}
+                      songData={x} // passing the song data here is easier than re-getting it within the component
+                      artistData={artistData}
+                      setArtistData={setArtistData}
                       songIndex={songIndex}
-                      saveRevisionNote={saveRevisionNote}
                     />
-
                   )
-                  
                 })}
 
                 {/* {artistData.songs.map((x, songIndex) => {

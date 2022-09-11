@@ -103,3 +103,36 @@ I feel goofy only learning this now - but you can list array directly as jsx. I 
 [i believe this feature with howler can help me not make ridiculous amount of data requests to firestore](https://github.com/goldfire/howler.js/#preload-booleanstring-true)
 
 it just gets the metadata about the file, not the actual data. the problem i had before was that by using the file location url into an <audio> tag it was actually downloading the file every time which caused me to go over my bandwidth very quickly without even knowing.
+
+
+# random notes from [...artist]
+
+```js
+
+// this page needs to be able to read from firebase using the router query, if it exists
+// collection would be artist[0]
+  // document names are predetermined
+    // songName would be either artist[1] or song (from the ?song=somesongname parameter)
+
+// then allow writes if they are authorized
+
+// http://localhost:3000/artistname?song=songname
+
+
+
+// the artists will be created by me when I actually upload files to them, so I can enter anything I want
+
+// .collection("artists").where("metadata.artistName", "==", "artistNameFromQuery")
+
+// you get access to their uid when they log in, so you could search for the document which contains that
+
+// it's a little scuffed of a workflow but at this scale since it's specific to me it works fine
+
+// .collection("artists").where("uid", "==", "the uid of the signed in artist")
+
+
+
+
+
+// need to get reference to their artist name when they sign in
+```
