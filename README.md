@@ -95,3 +95,11 @@ In retrospect this should have been obvious, but alas.
 ### arrays as jsx children
 
 I feel goofy only learning this now - but you can list array directly as jsx. I thought they were considered 'objects' and that react wouldn't allow it.
+
+## audio/howler
+
+### loading/caching
+
+[i believe this feature with howler can help me not make ridiculous amount of data requests to firestore](https://github.com/goldfire/howler.js/#preload-booleanstring-true)
+
+it just gets the metadata about the file, not the actual data. the problem i had before was that by using the file location url into an <audio> tag it was actually downloading the file every time which caused me to go over my bandwidth very quickly without even knowing.

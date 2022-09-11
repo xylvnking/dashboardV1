@@ -1,20 +1,46 @@
 .revisionTextArea {
   width: 100%;
+  width: 450px;
   
-  color: white;
+  // color: white;
   min-height: 100px;
-  resize: none;
+  // resize: none;
   // margin-bottom: 10px;
   outline: none;
-  border-style: none;
+  // border-style: none;
+  border-style: solid;
   border-radius: 10px;
+  border-width: 2px;
+  padding: 10px;
+  // cursor: pointer;
+  // background-color: black;
+  
+  
+  
+  
+  &:focus {
+    // padding: 10px;
+    border-style: solid;
+    // border-width: 2px;
+    // border-color: aliceblue;
+    // cursor: text;
+    background-color: white;
+    color: black;
+    transition: border-color 2s, border-width 2s;
+  }
+  
+  &.revisionTextAreaIsTyping {
+    // transition: padding 2s;
+    // border-color: rgb(0, 195, 255);
+    border-color: rgb(255, 255, 255);
+    // padding: 7px;
+    // border-width: 3px;
+  }
+
 }
 
-
-.changeCol {
-  // color: blue;
-  color: red;
-  color: green;
-
+.oldFileVersion {
+  color: rgb(133, 133, 133);
+  // background-color: aqua;
 }
 
