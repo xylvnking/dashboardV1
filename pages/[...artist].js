@@ -41,7 +41,13 @@ export default function Artist(props) {
         const querySnapshot = await getDocs(documentsToGet);
         querySnapshot.forEach((doc) => {
           setArtistData(doc.data())
-          // console.log(doc.id, " => ", doc.data());
+
+
+          if ( userAuth && userAuth.uid == doc.data().metadata.uid && artist[0] == doc.data().metadata.artistName) {
+            console.log('somebody is signed in and at a custom url')
+                  setArtistIsLoggedInAndOnTheirOwnPage(true)
+          }
+
         });
       }
       getDataPublic()
@@ -52,22 +58,27 @@ export default function Artist(props) {
         const documentsToGet = query(collection(db, "artists"), where(`metadata.uid`, "==", userAuth.uid)); 
         const querySnapshot = await getDocs(documentsToGet);
         querySnapshot.forEach((doc) => {
-          // console.log(doc.id, " => ", doc.data());
           setArtistData(doc.data())
         });
 
       }
       getDataAuthorized()
     } 
+
+    // if (userAuth) {
+    //   if (userAuth.uid && artist[0]) {
+    //       console.log('user is on thier own')
+    //       setArtistIsLoggedInAndOnTheirOwnPage(true)
+    //     }
+    // }
     
     // check if the artist is logged in AND at their own url
-    if (artist && userAuth && artist[0] == userAuth.uid) {
-      // console.log('user is on thier own')
-      setArtistIsLoggedInAndOnTheirOwnPage(true)
-    }
-  }, [userAuth, artist])
-
-  const check = () => {
+    }, [userAuth, artist])
+    
+    const check = () => {
+    // console.log(userAuth.uid)
+    console.log(artist[0])
+    
     // console.log(artistData)
     // console.log(dataTest)
     // console.log(userAuth)
@@ -96,11 +107,79 @@ export default function Artist(props) {
                   /> }
               </div>
                 <h1>artist name stylized: {artistData.metadata.artistNameStylized}</h1>
-                <h1>uid: {artistData.metadata.uid}</h1>
-                <h1>email: {artistData.metadata.email}</h1>
+                {/* <h1>uid: {artistData.metadata.uid}</h1> */}
+                {/* <h1>email: {artistData.metadata.email}</h1> */}
                 {/* {artistData.songs.map((x, songIndex) => { */}
 
-                {artistData.songs.map((x, songIndex) => {
+                
+                <section>
+                {
+                  artistIsLoggedInAndOnTheirOwnPage || userAuth.uid == artistData.metadata.uid
+                    // shows all the extra info and revision textarea if true, otherwise public
+                    // important because otherwise every artist would see the extra info and textarea for every other artist
+                    // and even though i'd block writes to the database, obviously that information is semi-sensitive and shouldn't be public
+
+
+                    // wait if they are signed in they should just see their stuff if no url provided?
+                    ?
+                    
+                    // song component with extra info and editing capabilities
+                    artistData.songs.map((x, songIndex) => {
+                      return (
+                        <Song 
+                        key={songIndex}
+                        songData={x} // passing the song data here is easier than re-getting it within the component
+                        artistData={artistData}
+                        setArtistData={setArtistData}
+                        songIndex={songIndex}
+                        />
+                        )
+                      })
+                      :
+                      // public song sharing
+                      artistData.songs.map((x, songIndex) => {
+                        return (
+                          <div key={x.songMetadata.songName}>
+                            {
+                              x.songMetadata.shareable == true // allows the artist to toggle whether the song is shown publicly or not
+                              &&
+                              <ul>
+                                <h2>song name: {x.songMetadata.songName}</h2>
+                                {/* <li>paid for: {x.songMetadata.paidFor ? 'yes' : 'no'}</li> */}
+                                {/* <li>date raw files received: {x.songMetadata.dateRawFilesReceived}</li> */}
+                                {/* <li>date released: {x.songMetadata.dateReleased}</li> */}
+                                {/* <li>backup location: {x.songMetadata.backupLocation}</li> */}
+                                {/* <li>date of most recent edit: {x.songMetadata.dateOfMostRecentEdit}</li> */}
+                                    {x.fileVersions.map((x, fileVersionIndex) => {
+                                      return (
+                                        <div key={x.fileVersionName}>
+                                          {
+                                            fileVersionIndex == 0
+                                            ?
+                                            <ul key={fileVersionIndex}>
+                                              <li>file version name: {x.fileVersionName}</li>
+                                              <li>date added: {x.dateAdded}</li>
+                                              {/* <li>Job type: {x.jobType}</li> */}
+                                              <TextareaAutosize 
+                                                  defaultValue={x.revisionNote}
+                                                  className={artistStyles.revisionTextArea}
+                                                  onChange={(e) => saveRevisionNote(e.target.value, songIndex, fileVersionIndex)} 
+                                              />
+                                            </ul>
+                                            :
+                                            <li>Revision note: {x.revisionNote}</li>
+                                          }
+                                        </div>
+                                      )
+                                    })}
+                              </ul>
+                            }
+                          </div>
+                        )
+                      })
+                }
+                </section>
+                {/* {artistData.songs.map((x, songIndex) => {
                   return (
                     <Song 
                       key={songIndex}
@@ -110,35 +189,8 @@ export default function Artist(props) {
                       songIndex={songIndex}
                     />
                   )
-                })}
-
-                {/* {artistData.songs.map((x, songIndex) => {
-                  return (
-                    <ul key= {songIndex}>
-                      <h2>song name: {x.songMetadata.songName}</h2>
-                      <li>paid for: {x.songMetadata.paidFor ? 'yes' : 'no'}</li>
-                      <li>date raw files received: {x.songMetadata.dateRawFilesReceived}</li>
-                      <li>date released: {x.songMetadata.dateReleased}</li>
-                      <li>backup location: {x.songMetadata.backupLocation}</li>
-                      <li>date of most recent edit: {x.songMetadata.dateOfMostRecentEdit}</li>
-                          {x.fileVersions.map((x, fileVersionIndex) => {
-                            return (
-                              <ul key={fileVersionIndex}>
-                                <li>file version name: {x.fileVersionName}</li>
-                                <li>date added: {x.dateAdded}</li>
-                                <li>Revision note: {x.revisionNote}</li>
-                                <TextareaAutosize 
-                                    defaultValue={x.revisionNote}
-                                    className={artistStyles.revisionTextArea}
-                                    onChange={(e) => saveRevisionNote(e.target.value, songIndex, fileVersionIndex)} 
-                                />
-                                <li>Job type: {x.jobType}</li>
-                              </ul>
-                            )
-                          })}
-                    </ul>
-                  )
                 })} */}
+
 
             </div>
           }

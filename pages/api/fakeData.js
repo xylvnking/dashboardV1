@@ -61,7 +61,8 @@ export const fakeData = [
                     dateRawFilesReceived: 'date',
                     dateReleased: 'date',
                     backupLocation: 'www.someurl.com',
-                    dateOfMostRecentEdit: 'some date object'
+                    dateOfMostRecentEdit: 'some date object',
+                    shareable: true
                 },
                 fileVersions: [
                     {
@@ -92,7 +93,8 @@ export const fakeData = [
                     dateRawFilesReceived: 'date',
                     dateReleased: 'date',
                     backupLocation: 'www.someurl.com',
-                    dateOfMostRecentEdit: 'some date object'
+                    dateOfMostRecentEdit: 'some date object',
+                    shareable: true
                 },
                 fileVersions: [
                     {
@@ -137,7 +139,8 @@ export const fakeData = [
                     dateRawFilesReceived: 'date',
                     dateReleased: 'date',
                     backupLocation: 'www.someurl.com',
-                    dateOfMostRecentEdit: 'some date object'
+                    dateOfMostRecentEdit: 'some date object',
+                    shareable: true,
                 },
                 fileVersions: [
                     {
@@ -168,7 +171,8 @@ export const fakeData = [
                     dateRawFilesReceived: 'date',
                     dateReleased: 'date',
                     backupLocation: 'www.someurl.com',
-                    dateOfMostRecentEdit: 'some date object'
+                    dateOfMostRecentEdit: 'some date object',
+                    shareable: true
                 },
                 fileVersions: [
                     {
