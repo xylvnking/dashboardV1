@@ -136,7 +136,7 @@ export const fakeData = [
         songs: [
             {
                 songMetadata: {
-                    songName: 'the first songs name',
+                    songName: 'thefirstsongsname',
                     songNameStylized: 'the FIRSTsong NAME!!!!',
                     paidFor: true,
                     dateRawFilesReceived: 'date',
@@ -169,7 +169,7 @@ export const fakeData = [
             },
             {
                 songMetadata: {
-                    songName: 'the second songs name',
+                    songName: 'thesecondsongsname',
                     songNameStylized: 'the secSECSECONDg NAME!!!!',
                     paidFor: true,
                     dateRawFilesReceived: 'date',

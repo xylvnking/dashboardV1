@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react'
 
 import { useRouter } from 'next/router'
 import Image from 'next/image';
+import Link from 'next/link'
 
 // import styles from '../styles/Home.module.css'
 import dashStyles from '../styles/Dashboard.module.scss'
@@ -17,6 +18,7 @@ import AudioNav from './Components/AudioNav';
 import Song from './Components/Song';
 
 import TextareaAutosize from 'react-textarea-autosize';
+import SongShare from './Components/SongShare';
 
 const artistTemp = 'artistName1'
 
@@ -78,12 +80,12 @@ export default function Artist(props) {
     const check = () => {
     // console.log(userAuth.uid)
     // console.log(artist[1])
-    console.log(song)
+    // console.log(song)
     
-    // console.log(artistData)
+    console.log(artistData)
     // console.log(dataTest)
     // console.log(userAuth)
-    // console.log(artist[0])
+    // console.log(artist[1])
   }
   return (  
     <>
@@ -114,23 +116,43 @@ export default function Artist(props) {
 
                 
                 <section>
+                <Link href={'http://localhost:3000/' + artistData.metadata.artistName}>
+                  <a style={{color: 'green'}}> SHOW ALL SONGS </a>                                  
+                </Link>
                 {
-                  artistIsLoggedInAndOnTheirOwnPage || userAuth.uid == artistData.metadata.uid
+                  artistIsLoggedInAndOnTheirOwnPage || userAuth && userAuth.uid == artistData.metadata.uid
                   ?
                     
                     // song component with extra info and editing capabilities
                     artistData.songs.map((x, songIndex) => {
-                      if (song) { // checks if the url has a specific song in it
-                        if (x.songMetadata.songName == song) {
+                      if (artist && artist[1]) { // checks if the url has a specific song in it and if so only returns that song
+                        if (x.songMetadata.songName == artist[1]) {
                           return (
-                            <Song 
+                            // <Song 
+                            // key={songIndex}
+                            // songData={x} // passing the song data here is easier than re-getting it within the component
+                            // artistData={artistData}
+                            // setArtistData={setArtistData}
+                            // songIndex={songIndex}
+                            // />
+
+                            /*
+                              using SongShare here makes it so that the logged in user can see what they'd be sharing, which makes more sense.
+                              there's no reason to really have an 'authorized' view of one song only, at least not right now.
+                            */
+
+
+                            <SongShare 
                             key={songIndex}
-                            songData={x} // passing the song data here is easier than re-getting it within the component
+                            songData={x}
                             artistData={artistData}
-                            setArtistData={setArtistData}
                             songIndex={songIndex}
-                            />)}
-                      } else {
+                            dataFromUrl={artist}
+                            />
+                            
+                            )}
+                      } else { // if no song is specified in the url all songs are returned
+                        console.log('callin')
                         return (
                           <Song 
                           key={songIndex}
@@ -139,44 +161,89 @@ export default function Artist(props) {
                           setArtistData={setArtistData}
                           songIndex={songIndex}
                           />)}
+
+
+
+
                       })
                       :
                       // public song sharing
                       artistData.songs.map((x, songIndex) => {
-                        return (
-                          <div key={x.songMetadata.songName}>
-                            {
-                              x.songMetadata.shareable == true // allows the artist to toggle whether the song is shown publicly or not
-                              &&
-                              <section>
-                                <h2>song name: {x.songMetadata.songName}</h2>
-                                    {x.fileVersions.map((x, fileVersionIndex) => {
-                                      return (
-                                        <div key={x.fileVersionName}>
-                                          {
-                                            fileVersionIndex == 0
-                                            ?
-                                            <ul key={fileVersionIndex}>
-                                              <li>file version name: {x.fileVersionName}</li>
-                                              <li>date added: {x.dateAdded}</li>
-                                              <li>Job type: {x.jobType}</li>
-                                              <TextareaAutosize 
-                                                  defaultValue={x.revisionNote}
-                                                  className={artistStyles.revisionTextArea}
-                                                  onChange={(e) => saveRevisionNote(e.target.value, songIndex, fileVersionIndex)} 
-                                              />
-                                            </ul>
-                                            :
-                                            null
-                                          }
-                                        </div>
-                                      )
-                                    })}
-                              </section>
-                            }
-                          </div>
-                        )
+                        if (artist && artist[1]) { // checks if the url has a specific song in it and if so only returns that song
+                          if (x.songMetadata.songName == artist[1]) {
+                            return (
+    
+                              <SongShare 
+                              key={songIndex}
+                              songData={x}
+                              artistData={artistData}
+                              songIndex={songIndex}
+                              dataFromUrl={artist}
+                              />
+                            )
+                          }
+                        } else {
+                          return (
+  
+                            <SongShare 
+                            key={songIndex}
+                            songData={x}
+                            artistData={artistData}
+                            songIndex={songIndex}
+                            dataFromUrl={artist}
+                            />
+                          )
+
+                        }
                       })
+
+
+
+
+
+                      // artistData.songs.map((x, songIndex) => {
+                      //   console.log('YERRR')
+                      //   return (
+                      //     <div key={x.songMetadata.songName}>
+                      //       {
+                      //         x.songMetadata.shareable == true // allows the artist to toggle whether the song is shown publicly or not
+                      //         &&
+                      //         <section>
+                      //           <h2>song name: {x.songMetadata.songName}</h2>
+                      //               {x.fileVersions.map((x, fileVersionIndex) => {
+                      //                 return (
+                      //                   <div key={x.fileVersionName}>
+                      //                     {
+                      //                       fileVersionIndex == 0
+                      //                       ?
+                      //                       <ul key={fileVersionIndex}>
+                      //                         <li>file version name: {x.fileVersionName}</li>
+                      //                         <li>date added: {x.dateAdded}</li>
+                      //                         <li>Job type: {x.jobType}</li>
+                      //                         <TextareaAutosize 
+                      //                             defaultValue={x.revisionNote}
+                      //                             className={artistStyles.revisionTextArea}
+                      //                             onChange={(e) => saveRevisionNote(e.target.value, songIndex, fileVersionIndex)} 
+                      //                         />
+                      //                       </ul>
+                      //                       :
+                      //                       null
+                      //                     }
+                      //                   </div>
+                      //                 )
+                      //               })}
+                      //         </section>
+                      //       }
+                      //     </div>
+                      //   )
+                      // })
+
+
+
+
+
+
+
                 }
                 </section>
             </div>
