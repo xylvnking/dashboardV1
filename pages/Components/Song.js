@@ -5,6 +5,9 @@ import artistStyles from '../../styles/Artist.module.scss'
 import { db, auth, provider } from '../../firebase-config';
 import { doc, onSnapshot, collection, query, where, getDoc, getDocs, updateDoc } from "firebase/firestore";
 
+import Link from 'next/link'
+
+
 let revisionTypingTimeout2
 
 export default function Song(props) {
@@ -26,8 +29,6 @@ export default function Song(props) {
         
         clearTimeout(revisionTypingTimeout2) // clear timer
         revisionTypingTimeout2 = setTimeout(() => { // use timer
-            // updateDoc(docRef, artistDataClone) // update firebase
-            // props.saveRevisionNote(eventValue, songIndex, fileVersionIndex)
             updateDoc(docRef, artistDataClone)
             setIsTyping(false)
         }, 500)
@@ -48,6 +49,10 @@ export default function Song(props) {
             open={props.songIndex == 0 && true}
         >
             <summary>{props.songData.songMetadata.songName}</summary>
+            <Link href="http://localhost:3000/dylanking6132?song=thefirstsongsname">
+                <a style={{color: 'blue'}}> open more details</a>
+                
+            </Link>
             <ul key= {props.songIndex}>
                 <h2>song name: {props.songData.songMetadata.songName}</h2>
                 <li>paid for: {props.songData.songMetadata.paidFor ? 'yes' : 'no'}</li>

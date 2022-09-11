@@ -77,7 +77,8 @@ export default function Artist(props) {
     
     const check = () => {
     // console.log(userAuth.uid)
-    console.log(artist[0])
+    // console.log(artist[1])
+    console.log(song)
     
     // console.log(artistData)
     // console.log(dataTest)
@@ -115,25 +116,29 @@ export default function Artist(props) {
                 <section>
                 {
                   artistIsLoggedInAndOnTheirOwnPage || userAuth.uid == artistData.metadata.uid
-                    // shows all the extra info and revision textarea if true, otherwise public
-                    // important because otherwise every artist would see the extra info and textarea for every other artist
-                    // and even though i'd block writes to the database, obviously that information is semi-sensitive and shouldn't be public
-
-
-                    // wait if they are signed in they should just see their stuff if no url provided?
-                    ?
+                  ?
                     
                     // song component with extra info and editing capabilities
                     artistData.songs.map((x, songIndex) => {
-                      return (
-                        <Song 
-                        key={songIndex}
-                        songData={x} // passing the song data here is easier than re-getting it within the component
-                        artistData={artistData}
-                        setArtistData={setArtistData}
-                        songIndex={songIndex}
-                        />
-                        )
+                      if (song) { // checks if the url has a specific song in it
+                        if (x.songMetadata.songName == song) {
+                          return (
+                            <Song 
+                            key={songIndex}
+                            songData={x} // passing the song data here is easier than re-getting it within the component
+                            artistData={artistData}
+                            setArtistData={setArtistData}
+                            songIndex={songIndex}
+                            />)}
+                      } else {
+                        return (
+                          <Song 
+                          key={songIndex}
+                          songData={x} // passing the song data here is easier than re-getting it within the component
+                          artistData={artistData}
+                          setArtistData={setArtistData}
+                          songIndex={songIndex}
+                          />)}
                       })
                       :
                       // public song sharing
@@ -143,13 +148,8 @@ export default function Artist(props) {
                             {
                               x.songMetadata.shareable == true // allows the artist to toggle whether the song is shown publicly or not
                               &&
-                              <ul>
+                              <section>
                                 <h2>song name: {x.songMetadata.songName}</h2>
-                                {/* <li>paid for: {x.songMetadata.paidFor ? 'yes' : 'no'}</li> */}
-                                {/* <li>date raw files received: {x.songMetadata.dateRawFilesReceived}</li> */}
-                                {/* <li>date released: {x.songMetadata.dateReleased}</li> */}
-                                {/* <li>backup location: {x.songMetadata.backupLocation}</li> */}
-                                {/* <li>date of most recent edit: {x.songMetadata.dateOfMostRecentEdit}</li> */}
                                     {x.fileVersions.map((x, fileVersionIndex) => {
                                       return (
                                         <div key={x.fileVersionName}>
@@ -159,7 +159,7 @@ export default function Artist(props) {
                                             <ul key={fileVersionIndex}>
                                               <li>file version name: {x.fileVersionName}</li>
                                               <li>date added: {x.dateAdded}</li>
-                                              {/* <li>Job type: {x.jobType}</li> */}
+                                              <li>Job type: {x.jobType}</li>
                                               <TextareaAutosize 
                                                   defaultValue={x.revisionNote}
                                                   className={artistStyles.revisionTextArea}
@@ -167,31 +167,18 @@ export default function Artist(props) {
                                               />
                                             </ul>
                                             :
-                                            <li>Revision note: {x.revisionNote}</li>
+                                            null
                                           }
                                         </div>
                                       )
                                     })}
-                              </ul>
+                              </section>
                             }
                           </div>
                         )
                       })
                 }
                 </section>
-                {/* {artistData.songs.map((x, songIndex) => {
-                  return (
-                    <Song 
-                      key={songIndex}
-                      songData={x} // passing the song data here is easier than re-getting it within the component
-                      artistData={artistData}
-                      setArtistData={setArtistData}
-                      songIndex={songIndex}
-                    />
-                  )
-                })} */}
-
-
             </div>
           }
           {/* <h1>{song}</h1>
