@@ -1,6 +1,10 @@
 import React from 'react'
+
 import Auth from '../Auth'
+
 import Image from 'next/image';
+import Link from 'next/link'
+
 import AudioNavStyles from '../../styles/AudioNav.module.scss'
 import defaultStyles from '../../styles/Default.module.scss'
 
@@ -12,6 +16,9 @@ const [userAuth, userAuthIsLoading, userAuthError] = useAuthState(auth)
   return (
     <main className={AudioNavStyles.container}>
         <Auth />
+        <Link href={'http://localhost:3000/admin/dashboard'}>
+          <a>ADMIN</a>
+        </Link>
         {
             userAuth ?
             <div>
