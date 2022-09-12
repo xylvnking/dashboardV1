@@ -1,16 +1,6 @@
 {
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
-  "/Auth": "pages/Auth.html",
-  "/Components/AudioNav": "pages/Components/AudioNav.html",
-  "/Components/Song": "pages/Components/Song.html",
-  "/Components/SongShare": "pages/Components/SongShare.html",
-  "/[...artist]": "pages/[...artist].html",
-  "/admin/dashboard": "pages/admin/dashboard.html",
-  "/admindelete": "pages/admindelete.html",
-  "/api/hello": "pages/api/hello.js",
-  "/api/fakeData": "pages/api/fakeData.js",
-  "/": "pages/index.html",
   "/_document": "pages/_document.js",
-  "/404": "pages/404.html"
+  "/[...artist]": "pages/[...artist].js"
 }

@@ -63,7 +63,9 @@ export const fakeData = [
                     dateReleased: 'date',
                     backupLocation: 'www.someurl.com',
                     dateOfMostRecentEdit: 'some date object',
-                    shareable: true
+                    shareable: true,
+                    isPartofAlbum: false,
+                    
                 },
                 fileVersions: [
                     {
@@ -96,7 +98,78 @@ export const fakeData = [
                     dateReleased: 'date',
                     backupLocation: 'www.someurl.com',
                     dateOfMostRecentEdit: 'some date object',
-                    shareable: true
+                    shareable: true,
+                    isPartofAlbum: false,
+                },
+                fileVersions: [
+                    {
+                        fileVersionName: `artistName-songName-dy-13-01-2022-0`,
+                        dateAdded: `January 1, 2022 at 12:00:00 am UTC-4`,
+                        revisionNote: `this is a revision note for first song`,
+                        jobType: `mix`
+                    },
+                    {
+                        fileVersionName: `artistName-songName-dy-13-01-2022-1`,
+                        dateAdded: `January 2, 2022 at 12:00:00 am UTC-4`,
+                        revisionNote: `this is a revision note for second song`,
+                        jobType: `mix`
+                    },
+                    {
+                        fileVersionName: `artistName-songName-dy-13-01-2022-2`,
+                        dateAdded: `January 3, 2022 at 12:00:00 am UTC-4`,
+                        revisionNote: `this is a revision note for third song`,
+                        jobType: `mix`
+                    },
+                    
+                ]
+            },
+            {
+                songMetadata: {
+                    songName: 'thethirdsongsname',
+                    songNameStylized: 'tTHIRDME!!!!',
+                    paidFor: true,
+                    dateRawFilesReceived: 'date',
+                    dateReleased: 'date',
+                    backupLocation: 'www.someurl.com',
+                    dateOfMostRecentEdit: 'some date object',
+                    shareable: true,
+                    isPartofAlbum: true,
+                    albumName: 'afakealbumname',
+                },
+                fileVersions: [
+                    {
+                        fileVersionName: `artistName-songName-dy-13-01-2022-0`,
+                        dateAdded: `January 1, 2022 at 12:00:00 am UTC-4`,
+                        revisionNote: `this is a revision note for first song`,
+                        jobType: `mix`
+                    },
+                    {
+                        fileVersionName: `artistName-songName-dy-13-01-2022-1`,
+                        dateAdded: `January 2, 2022 at 12:00:00 am UTC-4`,
+                        revisionNote: `this is a revision note for second song`,
+                        jobType: `mix`
+                    },
+                    {
+                        fileVersionName: `artistName-songName-dy-13-01-2022-2`,
+                        dateAdded: `January 3, 2022 at 12:00:00 am UTC-4`,
+                        revisionNote: `this is a revision note for third song`,
+                        jobType: `mix`
+                    },
+                    
+                ]
+            },
+            {
+                songMetadata: {
+                    songName: 'fourthsonganme',
+                    songNameStylized: 'faurth!!!!',
+                    paidFor: true,
+                    dateRawFilesReceived: 'date',
+                    dateReleased: 'date',
+                    backupLocation: 'www.someurl.com',
+                    dateOfMostRecentEdit: 'some date object',
+                    shareable: true,
+                    isPartofAlbum: true,
+                    albumName: 'afakealbumname',
                 },
                 fileVersions: [
                     {
@@ -144,6 +217,7 @@ export const fakeData = [
                     backupLocation: 'www.someurl.com',
                     dateOfMostRecentEdit: 'some date object',
                     shareable: true,
+                    isPartofAlbum: false,
                 },
                 fileVersions: [
                     {
@@ -176,7 +250,8 @@ export const fakeData = [
                     dateReleased: 'date',
                     backupLocation: 'www.someurl.com',
                     dateOfMostRecentEdit: 'some date object',
-                    shareable: true
+                    shareable: true,
+                    isPartofAlbum: false,
                 },
                 fileVersions: [
                     {

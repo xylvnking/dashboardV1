@@ -1,9 +1,9 @@
 import React, {useState, useEffect} from 'react'
 import {useAuthState} from "react-firebase-hooks/auth"
 import { db, auth, provider } from '../firebase-config';
-import { signInWithPopup, signOut } from 'firebase/auth'
 import { fakeData } from './api/fakeData'
 
+import { signInWithPopup, signOut } from 'firebase/auth'
 import { collection, addDoc, doc, getDoc, setDoc, updateDoc } from "firebase/firestore"; 
 
 

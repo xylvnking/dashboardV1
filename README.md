@@ -136,3 +136,7 @@ it just gets the metadata about the file, not the actual data. the problem i had
 
 // need to get reference to their artist name when they sign in
 ```
+
+# html
+<select> tags need to be proceeded by a label. 
+for some reason they work anywhere in a form, as long as there is a label before them for some elements, and that that element is type date or radio (didn't test others) but it didn't work with type text. super weird and i have no idea why it's happening. i assume accessibility reasons or focus but felt like a strange bug that I wasn't seeing other people struggle with online, so maybe I've done something to create it. Regardless adding a label fixes it.

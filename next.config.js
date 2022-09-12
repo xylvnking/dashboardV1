@@ -7,7 +7,7 @@ const nextConfig = {
     includePaths: [path.join(__dirname, 'styles')],
   },
   images: {
-    domains: ['lh3.googleusercontent.com', 'images.unsplash.com']
+    domains: ['lh3.googleusercontent.com', 'images.unsplash.com', 'upload.wikimedia.org']
   }
 }
 

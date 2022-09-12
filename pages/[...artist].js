@@ -39,9 +39,11 @@ export default function Artist(props) {
 
     if (artist){
       const getDataPublic = async () => {
+        console.log('an artist has been specified')
         const documentsToGet = query(collection(db, "artists"), where(`metadata.artistName`, "==", artist[0]));
         const querySnapshot = await getDocs(documentsToGet);
         querySnapshot.forEach((doc) => {
+          console.log(doc.data())
           setArtistData(doc.data())
 
 
@@ -127,7 +129,7 @@ export default function Artist(props) {
 
                     if they go to anybody elses page they see all shareable songs, and if a url param is available they only see that songs shareable version
                   */
-                  userAuth && userAuth.uid == artistData.metadata.uid
+                  userAuth && userAuth.uid == artistData.metadata.uid && artistData.songs
                   ?
                     
                     // song component with extra info and editing capabilities
@@ -161,7 +163,9 @@ export default function Artist(props) {
                       :
 
 
-
+                      
+                      artistData.songs && // doesn't try to render songs if none exist
+                      
                       // public song sharing
                       artistData.songs.map((x, songIndex) => {
                         if (artist && artist[1]) { // checks if the url has a specific song in it and if so only returns that song
