@@ -44,14 +44,27 @@ export default function Auth() {
         })
     }
 
+    // const date1 = new Date()
+    // console.log(date1)
+
     return (
         <div>
             <button onClick={() => createFakeData()}>reset database</button>
-            {
+            {/* {
                 userAuth
                 ?
                 <button onClick={signUserOut}> Sign Out</button>
                 :
+                <button onClick={signInWithGoogle}> Sign In</button>
+            } */}
+            {
+                userAuth
+                &&
+                <button onClick={signUserOut}> Sign Out</button>
+            }
+            {
+                !userAuth
+                &&
                 <button onClick={signInWithGoogle}> Sign In</button>
             }
         </div>

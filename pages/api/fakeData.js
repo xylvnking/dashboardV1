@@ -60,10 +60,10 @@ export const fakeData = [
                     songName: 'thefirstsongsname',
                     songNameStylized: 'the FIRSTsong NAME!!!!',
                     paidFor: true,
-                    dateRawFilesReceived: 'date',
-                    dateReleased: 'date',
+                    dateRawFilesReceived: new Date(),
+                    dateReleased: new Date(),
                     backupLocation: 'www.someurl.com',
-                    dateOfMostRecentEdit: 'some date object',
+                    dateOfMostRecentEdit: new Date(),
                     shareable: true,
                     isPartofAlbum: false,
                     

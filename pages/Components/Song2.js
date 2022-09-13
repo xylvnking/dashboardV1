@@ -44,30 +44,32 @@ export default function Song2(props) {
             songData &&
     <main className='lightBorder'>
         <ul>
-            
             <h1>song index is {props.songIndex}</h1>
-            {
-                // Object.keys(props.songData.songMetadata).map((metadataField, metadataFieldIndex) => {
-                Object.keys(songData.songMetadata).map((metadataField, metadataFieldIndex) => {
-                    return (
-                        <ul key={metadataFieldIndex}>
-                            <li><strong>{metadataField}</strong></li>
-                            <li>{props.songData.songMetadata[metadataField]}</li>
-                        </ul>
-                    )
-                })
-            }
-            {/* {
-                // Object.keys(props.songData.songMetadata).map((metadataField, metadataFieldIndex) => {
-                Object.keys(songData.songMetadata).map((metadataField, metadataFieldIndex) => {
-                    return (
-                        <ul key={metadataFieldIndex}>
-                            <li><strong>{metadataField}</strong></li>
-                            <li>{props.songData.songMetadata[metadataField]}</li>
-                        </ul>
-                    )
-                })
-            } */}
+            
+            <li><strong>Artist name:</strong></li>
+            <li>{songData.songMetadata.artistName}</li>
+            <li><strong>Song name:</strong></li>
+            <li>{songData.songMetadata.songName}</li>
+            <li><strong>Date of most recent edit:</strong></li>
+            <li>{Date(songData.songMetadata.dateOfMostRecentEdit)}</li>
+            <details>
+                <summary>more metadata</summary>
+                {
+                    // Object.keys(props.songData.songMetadata).map((metadataField, metadataFieldIndex) => {
+                    Object.keys(songData.songMetadata).map((metadataField, metadataFieldIndex) => {
+                        
+                        if (typeof props.songData.songMetadata[metadataField] == 'string') {
+                            return (
+                                <ul key={metadataFieldIndex}>
+                                    <li><strong>{metadataField}</strong></li>
+                                    <li>{props.songData.songMetadata[metadataField]}</li>
+                                </ul>
+                            )
+                        }
+                    })
+                }
+            </details>
+
             <AddFileVersion 
                 artistName={props.artistName}
                 songData={songData}

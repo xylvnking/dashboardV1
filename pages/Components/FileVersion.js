@@ -27,6 +27,13 @@ export default function FileVersion(props) {
       fileVersionData &&
     <main className='lightBorder'>
             <h3>{props.fileVersion.fileVersionName}</h3>
+            <ul>
+                <li><strong>Artist name:</strong></li>
+                <li>{props.fileVersion.artistName}</li>
+                <li><strong>Song name:</strong></li>
+                <li>{props.fileVersion.songName}</li>
+
+            </ul>
         <ul>
             {
                 Object.keys(fileVersionData).map((fileVersionField, fileversionFieldIndex) => {
