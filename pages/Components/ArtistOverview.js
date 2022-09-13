@@ -55,6 +55,7 @@ export default function ArtistOverview(props) {
                         songData={songData}
                         songIndex={songIndex}
                         deleteSong={deleteSong}
+                        artistName={props.artistData.metadata.artistName}
                     />
                 )
             })

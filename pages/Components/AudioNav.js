@@ -16,8 +16,12 @@ const [userAuth, userAuthIsLoading, userAuthError] = useAuthState(auth)
   return (
     <main className={AudioNavStyles.container}>
         <Auth />
-        <Link href={'http://localhost:3000/admin/dashboard'}>
+        <Link href={'admin/dashboard'}>
           <a>ADMIN</a>
+        </Link>
+        
+        <Link href={'/'}>
+          <a>HOME</a>
         </Link>
         {
             userAuth ?

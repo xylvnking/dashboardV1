@@ -70,18 +70,24 @@ export const fakeData = [
                 },
                 fileVersions: [
                     {
+                        artistName: 'dylanking6132',
+                        songName: 'thefirstsongsname',
                         fileVersionName: `artistName-songName-dy-13-01-2022-0`,
                         dateAdded: `January 1, 2022 at 12:00:00 am UTC-4`,
                         revisionNote: `this is a revision note for first song`,
                         jobType: `mix`
                     },
                     {
+                        artistName: 'dylanking6132',
+                        songName: 'thefirstsongsname',
                         fileVersionName: `artistName-songName-dy-13-01-2022-1`,
                         dateAdded: `January 2, 2022 at 12:00:00 am UTC-4`,
                         revisionNote: `this is a revision note for second song`,
                         jobType: `mix`
                     },
                     {
+                        artistName: 'dylanking6132',
+                        songName: 'thefirstsongsname',
                         fileVersionName: `artistName-songName-dy-13-01-2022-2`,
                         dateAdded: `January 3, 2022 at 12:00:00 am UTC-4`,
                         revisionNote: `this is a revision note for third song`,
@@ -105,18 +111,24 @@ export const fakeData = [
                 },
                 fileVersions: [
                     {
+                        artistName: 'dylanking6132',
+                        songName: 'thesecondsongsname',
                         fileVersionName: `artistName-songName-dy-13-01-2022-0`,
                         dateAdded: `January 1, 2022 at 12:00:00 am UTC-4`,
                         revisionNote: `this is a revision note for first song`,
                         jobType: `mix`
                     },
                     {
+                        artistName: 'dylanking6132',
+                        songName: 'thesecondsongsname',
                         fileVersionName: `artistName-songName-dy-13-01-2022-1`,
                         dateAdded: `January 2, 2022 at 12:00:00 am UTC-4`,
                         revisionNote: `this is a revision note for second song`,
                         jobType: `mix`
                     },
                     {
+                        artistName: 'dylanking6132',
+                        songName: 'thesecondsongsname',
                         fileVersionName: `artistName-songName-dy-13-01-2022-2`,
                         dateAdded: `January 3, 2022 at 12:00:00 am UTC-4`,
                         revisionNote: `this is a revision note for third song`,
@@ -141,18 +153,24 @@ export const fakeData = [
                 },
                 fileVersions: [
                     {
+                        artistName: 'dylanking6132',
+                        songName: 'thethirdsongsname',
                         fileVersionName: `artistName-songName-dy-13-01-2022-0`,
                         dateAdded: `January 1, 2022 at 12:00:00 am UTC-4`,
                         revisionNote: `this is a revision note for first song`,
                         jobType: `mix`
                     },
                     {
+                        artistName: 'dylanking6132',
+                        songName: 'thethirdsongsname',
                         fileVersionName: `artistName-songName-dy-13-01-2022-1`,
                         dateAdded: `January 2, 2022 at 12:00:00 am UTC-4`,
                         revisionNote: `this is a revision note for second song`,
                         jobType: `mix`
                     },
                     {
+                        artistName: 'dylanking6132',
+                        songName: 'thethirdsongsname',
                         fileVersionName: `artistName-songName-dy-13-01-2022-2`,
                         dateAdded: `January 3, 2022 at 12:00:00 am UTC-4`,
                         revisionNote: `this is a revision note for third song`,
@@ -177,18 +195,24 @@ export const fakeData = [
                 },
                 fileVersions: [
                     {
+                        artistName: 'dylanking6132',
+                        songName: 'fourthsonganme',
                         fileVersionName: `artistName-songName-dy-13-01-2022-0`,
                         dateAdded: `January 1, 2022 at 12:00:00 am UTC-4`,
                         revisionNote: `this is a revision note for first song`,
                         jobType: `mix`
                     },
                     {
+                        artistName: 'dylanking6132',
+                        songName: 'fourthsonganme',
                         fileVersionName: `artistName-songName-dy-13-01-2022-1`,
                         dateAdded: `January 2, 2022 at 12:00:00 am UTC-4`,
                         revisionNote: `this is a revision note for second song`,
                         jobType: `mix`
                     },
                     {
+                        artistName: 'dylanking6132',
+                        songName: 'fourthsonganme',
                         fileVersionName: `artistName-songName-dy-13-01-2022-2`,
                         dateAdded: `January 3, 2022 at 12:00:00 am UTC-4`,
                         revisionNote: `this is a revision note for third song`,
@@ -220,18 +244,24 @@ export const fakeData = [
                         },
                         fileVersions: [
                             {
+                                artistName: 'dylanking6132',
+                                songName: 'thefirstsongsname',
                                 fileVersionName: `artistName-songName-dy-13-01-2022-0`,
                                 dateAdded: `January 1, 2022 at 12:00:00 am UTC-4`,
                                 revisionNote: `this is a revision note for first song`,
                                 jobType: `mix`
                             },
                             {
+                                artistName: 'dylanking6132',
+                                songName: 'thefirstsongsname',
                                 fileVersionName: `artistName-songName-dy-13-01-2022-1`,
                                 dateAdded: `January 2, 2022 at 12:00:00 am UTC-4`,
                                 revisionNote: `this is a revision note for second song`,
                                 jobType: `mix`
                             },
                             {
+                                artistName: 'dylanking6132',
+                                songName: 'thefirstsongsname',
                                 fileVersionName: `artistName-songName-dy-13-01-2022-2`,
                                 dateAdded: `January 3, 2022 at 12:00:00 am UTC-4`,
                                 revisionNote: `this is a revision note for third song`,
@@ -255,18 +285,24 @@ export const fakeData = [
                         },
                         fileVersions: [
                             {
+                                artistName: 'dylanking6132',
+                                songName: 'thesecondsongsname',
                                 fileVersionName: `artistName-songName-dy-13-01-2022-0`,
                                 dateAdded: `January 1, 2022 at 12:00:00 am UTC-4`,
                                 revisionNote: `this is a revision note for first song`,
                                 jobType: `mix`
                             },
                             {
+                                artistName: 'dylanking6132',
+                                songName: 'thesecondsongsname',
                                 fileVersionName: `artistName-songName-dy-13-01-2022-1`,
                                 dateAdded: `January 2, 2022 at 12:00:00 am UTC-4`,
                                 revisionNote: `this is a revision note for second song`,
                                 jobType: `mix`
                             },
                             {
+                                artistName: 'dylanking6132',
+                                songName: 'thesecondsongsname',
                                 fileVersionName: `artistName-songName-dy-13-01-2022-2`,
                                 dateAdded: `January 3, 2022 at 12:00:00 am UTC-4`,
                                 revisionNote: `this is a revision note for third song`,
@@ -291,18 +327,24 @@ export const fakeData = [
                         },
                         fileVersions: [
                             {
+                                artistName: 'dylanking6132',
+                                songName: 'thethirdsongsname',
                                 fileVersionName: `artistName-songName-dy-13-01-2022-0`,
                                 dateAdded: `January 1, 2022 at 12:00:00 am UTC-4`,
                                 revisionNote: `this is a revision note for first song`,
                                 jobType: `mix`
                             },
                             {
+                                artistName: 'dylanking6132',
+                                songName: 'thethirdsongsname',
                                 fileVersionName: `artistName-songName-dy-13-01-2022-1`,
                                 dateAdded: `January 2, 2022 at 12:00:00 am UTC-4`,
                                 revisionNote: `this is a revision note for second song`,
                                 jobType: `mix`
                             },
                             {
+                                artistName: 'dylanking6132',
+                                songName: 'thethirdsongsname',
                                 fileVersionName: `artistName-songName-dy-13-01-2022-2`,
                                 dateAdded: `January 3, 2022 at 12:00:00 am UTC-4`,
                                 revisionNote: `this is a revision note for third song`,
@@ -327,18 +369,24 @@ export const fakeData = [
                         },
                         fileVersions: [
                             {
+                                artistName: 'dylanking6132',
+                                songName: 'fourthsonganme',
                                 fileVersionName: `artistName-songName-dy-13-01-2022-0`,
                                 dateAdded: `January 1, 2022 at 12:00:00 am UTC-4`,
                                 revisionNote: `this is a revision note for first song`,
                                 jobType: `mix`
                             },
                             {
+                                artistName: 'dylanking6132',
+                                songName: 'fourthsonganme', 
                                 fileVersionName: `artistName-songName-dy-13-01-2022-1`,
                                 dateAdded: `January 2, 2022 at 12:00:00 am UTC-4`,
                                 revisionNote: `this is a revision note for second song`,
                                 jobType: `mix`
                             },
                             {
+                                artistName: 'dylanking6132',
+                                songName: 'fourthsonganme',
                                 fileVersionName: `artistName-songName-dy-13-01-2022-2`,
                                 dateAdded: `January 3, 2022 at 12:00:00 am UTC-4`,
                                 revisionNote: `this is a revision note for third song`,
@@ -378,18 +426,24 @@ export const fakeData = [
                 },
                 fileVersions: [
                     {
+                        artistName: 'dylanking600',
+                        songName: 'thefirstsongsname',
                         fileVersionName: `artistName-songName-dy-13-01-2022-0`,
                         dateAdded: `January 1, 2022 at 12:00:00 am UTC-4`,
                         revisionNote: `this is a revision note for first song`,
                         jobType: `mix`
                     },
                     {
+                        artistName: 'dylanking600',
+                        songName: 'thefirstsongsname',
                         fileVersionName: `artistName-songName-dy-13-01-2022-1`,
                         dateAdded: `January 2, 2022 at 12:00:00 am UTC-4`,
                         revisionNote: `this is a revision note for second song`,
                         jobType: `mix`
                     },
                     {
+                        artistName: 'dylanking600',
+                        songName: 'thefirstsongsname',
                         fileVersionName: `artistName-songName-dy-13-01-2022-2`,
                         dateAdded: `January 3, 2022 at 12:00:00 am UTC-4`,
                         revisionNote: `this is a revision note for third song`,
@@ -413,18 +467,24 @@ export const fakeData = [
                 },
                 fileVersions: [
                     {
+                        artistName: 'dylanking600',
+                        songName: 'thesecondsongsname',
                         fileVersionName: `artistName-songName-dy-13-01-2022-0`,
                         dateAdded: `January 1, 2022 at 12:00:00 am UTC-4`,
                         revisionNote: `this is a revision note for first song`,
                         jobType: `mix`
                     },
                     {
+                        artistName: 'dylanking600',
+                        songName: 'thesecondsongsname',
                         fileVersionName: `artistName-songName-dy-13-01-2022-1`,
                         dateAdded: `January 2, 2022 at 12:00:00 am UTC-4`,
                         revisionNote: `this is a revision note for second song`,
                         jobType: `mix`
                     },
                     {
+                        artistName: 'dylanking600',
+                        songName: 'thesecondsongsname',
                         fileVersionName: `artistName-songName-dy-13-01-2022-2`,
                         dateAdded: `January 3, 2022 at 12:00:00 am UTC-4`,
                         revisionNote: `this is a revision note for third song`,

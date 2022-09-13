@@ -3,6 +3,9 @@ import React, {useState, useEffect} from 'react'
 import { collection, addDoc, doc, getDoc, setDoc, updateDoc } from "firebase/firestore"; 
 import { db, auth, provider } from '../../firebase-config';
 
+import FileVersion from './FileVersion';
+import AddFileVersion from './AddFileVersion';
+
 
 export default function Song2(props) {
 
@@ -24,7 +27,7 @@ export default function Song2(props) {
         if (docSnap.exists()) { // if the document exists
             tempArtistSongsArray = (docSnap.data().songs) // store document data in scoped local array
             console.log(tempArtistSongsArray)
-            tempArtistSongsArray.splice(props.songIndex, 1) // push the song we are adding into that array
+            tempArtistSongsArray.splice(props.songIndex, 1) 
             console.log(tempArtistSongsArray)
           }
         updateDoc(docRef, {
@@ -54,8 +57,45 @@ export default function Song2(props) {
                     )
                 })
             }
+            {/* {
+                // Object.keys(props.songData.songMetadata).map((metadataField, metadataFieldIndex) => {
+                Object.keys(songData.songMetadata).map((metadataField, metadataFieldIndex) => {
+                    return (
+                        <ul key={metadataFieldIndex}>
+                            <li><strong>{metadataField}</strong></li>
+                            <li>{props.songData.songMetadata[metadataField]}</li>
+                        </ul>
+                    )
+                })
+            } */}
+            <AddFileVersion 
+                artistName={props.artistName}
+                songData={songData}
+                songIndex={props.songIndex}
+
+            />
+
+
+            {songData.fileVersions.map((fileVersion, fileVersionIndex) => {
+                return (
+
+                    <FileVersion 
+                        key={fileVersionIndex}
+                        fileVersion={fileVersion}
+                        fileVersionIndex={fileVersionIndex}
+                        songIndex={props.songIndex}
+                    />
+                )
+            })}
+
+
+
+
             <button onClick={() => deleteSong2(props.songData.songMetadata.artistName)}>delete song within song</button>
             <button onClick={() => props.deleteSong(props.songIndex)}>delete song by calling prop function</button>
+            <button onClick={() => console.log(
+                songData.fileVersions
+            )}>check</button>
             {/* <button onClick={() => deleteSong2(props.songIndex)}>delete song</button> */}
         </ul>
     </main>
