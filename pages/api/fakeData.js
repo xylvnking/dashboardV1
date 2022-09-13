@@ -56,6 +56,7 @@ export const fakeData = [
         songs: [
             {
                 songMetadata: {
+                    artistName: 'dylanking6132',
                     songName: 'thefirstsongsname',
                     songNameStylized: 'the FIRSTsong NAME!!!!',
                     paidFor: true,
@@ -91,6 +92,7 @@ export const fakeData = [
             },
             {
                 songMetadata: {
+                    artistName: 'dylanking6132',
                     songName: 'thesecondsongsname',
                     songNameStylized: 'the secSECSECONDg NAME!!!!',
                     paidFor: true,
@@ -125,6 +127,7 @@ export const fakeData = [
             },
             {
                 songMetadata: {
+                    artistName: 'dylanking6132',
                     songName: 'thethirdsongsname',
                     songNameStylized: 'tTHIRDME!!!!',
                     paidFor: true,
@@ -160,6 +163,7 @@ export const fakeData = [
             },
             {
                 songMetadata: {
+                    artistName: 'dylanking6132',
                     songName: 'fourthsonganme',
                     songNameStylized: 'faurth!!!!',
                     paidFor: true,
@@ -202,6 +206,7 @@ export const fakeData = [
                 songs: [
                     {
                         songMetadata: {
+                            artistName: 'dylanking6132',
                             songName: 'thefirstsongsname',
                             songNameStylized: 'the FIRSTsong NAME!!!!',
                             paidFor: true,
@@ -237,6 +242,7 @@ export const fakeData = [
                     },
                     {
                         songMetadata: {
+                            artistName: 'dylanking6132',
                             songName: 'thesecondsongsname',
                             songNameStylized: 'the secSECSECONDg NAME!!!!',
                             paidFor: true,
@@ -271,6 +277,7 @@ export const fakeData = [
                     },
                     {
                         songMetadata: {
+                            artistName: 'dylanking6132',
                             songName: 'thethirdsongsname',
                             songNameStylized: 'tTHIRDME!!!!',
                             paidFor: true,
@@ -306,6 +313,7 @@ export const fakeData = [
                     },
                     {
                         songMetadata: {
+                            artistName: 'dylanking6132',
                             songName: 'fourthsonganme',
                             songNameStylized: 'faurth!!!!',
                             paidFor: true,
@@ -357,6 +365,7 @@ export const fakeData = [
         songs: [
             {
                 songMetadata: {
+                    artistName: 'dylanking600',
                     songName: 'thefirstsongsname',
                     songNameStylized: 'the FIRSTsong NAME!!!!',
                     paidFor: true,
@@ -391,6 +400,7 @@ export const fakeData = [
             },
             {
                 songMetadata: {
+                    artistName: 'dylanking600',
                     songName: 'thesecondsongsname',
                     songNameStylized: 'the secSECSECONDg NAME!!!!',
                     paidFor: true,

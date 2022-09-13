@@ -51,7 +51,7 @@ export default function AddSong(props) {
         })
         console.log('song would be added to db')
     }
-    console.log(props.allArtistData)
+    // console.log(props.allArtistData)
 
     return (
         <main>

@@ -5,6 +5,7 @@ import { db, auth, provider } from '../../firebase-config';
 import AudioNav from '../Components/AudioNav'
 import AddSong from '../Components/AddSong'
 import AddArtist from '../Components/AddArtist'
+import ArtistOverview from '../Components/ArtistOverview'
 
 // import { getDocs } from 'firebase/firestore';
 import { doc, onSnapshot, collection, query, where, getDoc, getDocs, updateDoc } from "firebase/firestore";
@@ -43,21 +44,24 @@ export default function dashboard() {
             allArtistData &&
             allArtistData.map((artist, artistIndex) => {
                 return (
-                    // MAKE THIS AN ARTIST COMPONENT, THEN A SONG COMPONENT WITHIN THAT
-                    // AND CONSIDER WHETHER IT SHOULD BE THE SAME ONE THE ARTISTS SEE
-                    <ul key={artistIndex}>
-                        <li>{artist.metadata.artistName}</li>
-                        <ul>{artist.songs.map((song, songIndex) => {
-                            return (
-                                <ul key={songIndex}>
+                    
+                    <ArtistOverview 
+                        key={artistIndex}
+                        artistData={artist}
+                    />
+                    // <ul key={artistIndex}>
+                    //     <li>{artist.metadata.artistName}</li>
+                    //     <ul>{artist.songs.map((song, songIndex) => {
+                    //         return (
+                    //             <ul key={songIndex}>
 
-                                    <li onClick={() => console.log(`open ${song.songMetadata.songName}`)}>{song.songMetadata.songName}</li>
-                                    <button onClick={() => console.log(`DELETE ${song.songMetadata.songName}`)}>Delete</button>
-                                </ul>
-                            )
-                        })}</ul>
+                    //                 <li onClick={() => console.log(`open ${song.songMetadata.songName}`)}>{song.songMetadata.songName}</li>
+                    //                 <button onClick={() => console.log(`DELETE ${song.songMetadata.songName}`)}>Delete</button>
+                    //             </ul>
+                    //         )
+                    //     })}</ul>
 
-                    </ul>
+                    // </ul>
                 )
             })
         }
