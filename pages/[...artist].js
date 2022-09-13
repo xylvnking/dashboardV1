@@ -84,7 +84,7 @@ export default function Artist(props) {
     // console.log(artist[1])
     // console.log(song)
     
-    console.log(artistData)
+    console.log(artistData.albums)
     // console.log(dataTest)
     // console.log(userAuth)
     // console.log(artist[1])

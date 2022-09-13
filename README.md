@@ -140,3 +140,25 @@ it just gets the metadata about the file, not the actual data. the problem i had
 # html
 <select> tags need to be proceeded by a label. 
 for some reason they work anywhere in a form, as long as there is a label before them for some elements, and that that element is type date or radio (didn't test others) but it didn't work with type text. super weird and i have no idea why it's happening. i assume accessibility reasons or focus but felt like a strange bug that I wasn't seeing other people struggle with online, so maybe I've done something to create it. Regardless adding a label fixes it.
+
+# for next time / out of scope
+
+## firebase data structure
+
+I completely neglected the fact that it might be helpful to structure the songs within either single or album structure. I'm still thinking about the most ideal way to implement this. probably 90% of my work is just singles, and it feels a bit silly to force them all into albums, but it might be needed if i wanted to add a lot more functionality to this project. it would also mean iterating over another layer, complicating the ui structure more just for an edge case.
+
+for example if i need to just get all the songs from one album together right now, i'd have to complile that client side by using .find and .findIndex or filter or whatever and get them all that way, which is manageable but then to also get a slug of that i'd need to pass that into a route etc etc it just gets complicated. I'm definitely going to implement it and see if it's worth it, but it might just be a lesson learned. 
+
+My other idea is to just add another object into the structure within the artsits doc for albums. so you'd have metadata containing info about the artist, songs/singles containing all the singles, and then albums containing all the albums. this would save me from having to basically rewrite the entire app *and* it would allow me to not add extra complexity and url parameters for each single.
+
+### using nested collections with firebase
+
+I also think that I'm going against the way that firebase should be working - by having these complicated document strcutures with no sub-collections it makes me have to go through all sorts of data to create a ui. I'm pretty sure that creating sub collections and documents would make things easier because they could be queried directly. at the very least it would be more flexible and although at this scale not a big concern but definitely more performant.
+
+the way i'm doing things right now is basically the same except everything is held on one document. the structure is technically the same but it doesn't allow me to make queries or update just one thing as easily.
+
+it works the way i have it but i have a feeling it would be a better idea to do it the 'proper' way and leverage firebase the way it should be leveraged.  
+
+i'm going to continue building the app this way so its complete and see if there's anything else, but yeah this will probably unfortunately not be the version clients see. 
+
+

@@ -26,7 +26,6 @@ export default function dashboard() {
                 querySnapshot.forEach((doc) => {
                     arrayOfUsersTemp.push(doc.data())
                     // console.log(doc.data())
-
                 })
                 setAllArtistData(arrayOfUsersTemp)
             }
@@ -38,9 +37,32 @@ export default function dashboard() {
 
   return (
     <main>
-        <button onClick={() => console.log(allArtistData)}>log all users</button>
         <AudioNav/>
+        <button onClick={() => console.log(allArtistData)}>log all users</button>
+        {
+            allArtistData &&
+            allArtistData.map((artist, artistIndex) => {
+                return (
+                    // MAKE THIS AN ARTIST COMPONENT, THEN A SONG COMPONENT WITHIN THAT
+                    // AND CONSIDER WHETHER IT SHOULD BE THE SAME ONE THE ARTISTS SEE
+                    <ul key={artistIndex}>
+                        <li>{artist.metadata.artistName}</li>
+                        <ul>{artist.songs.map((song, songIndex) => {
+                            return (
+                                <ul key={songIndex}>
 
+                                    <li onClick={() => console.log(`open ${song.songMetadata.songName}`)}>{song.songMetadata.songName}</li>
+                                    <button onClick={() => console.log(`DELETE ${song.songMetadata.songName}`)}>Delete</button>
+                                </ul>
+                            )
+                        })}</ul>
+
+                    </ul>
+                )
+            })
+        }
+
+        <h3>maybe remake the song component</h3>
         <details>
             <summary>add artist</summary>
             <AddArtist />
