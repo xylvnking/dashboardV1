@@ -18,21 +18,21 @@ export default function AddSong(props) {
                 songName: event.target[1].value,
                 songNameStylized: event.target[2].value,
                 backupLocation: 'www.someurl.com',
-                paidFor: true,
-                dateRawFilesReceived: 'date',
-                dateReleased: 'date',
-                dateOfMostRecentEdit: 'some date object',
+                paidFor: false,
+                dateRawFilesReceived: new Date(),
+                dateAdded: new Date(),
+                dateOfMostRecentEdit: new Date(),
                 shareable: true,
                 isPartofAlbum: false,
             },
-            fileVersions: [
-                {
-                    fileVersionName: `artistName-songName-dy-13-01-2022-0`,
-                    dateAdded: `January 1, 2022 at 12:00:00 am UTC-4`,
-                    revisionNote: `this is a revision note for first song`,
-                    jobType: `mix`
-                }
-            ]
+            // fileVersions: [
+            //     {
+            //         fileVersionName: `artistName-songName-dy-13-01-2022-0`,
+            //         dateAdded: `January 1, 2022 at 12:00:00 am UTC-4`,
+            //         revisionNote: `this is a revision note for first song`,
+            //         jobType: `mix`
+            //     }
+            // ]
         }
 
         let tempArtistSongsArray
@@ -85,10 +85,10 @@ export default function AddSong(props) {
                 <label htmlFor='songNameStylized'>songNameStylized</label>
                 <input type='text' id='songNameStylized' defaultValue='songnamestylizeddefault'/>
 
-                <label htmlFor='backupLocation'>backupLocation</label>
-                <input type='text' id='dateReleased' defaultValue='backuplocationdefault'/>
+                {/* <label htmlFor='backupLocation'>backupLocation</label>
+                <input type='text' id='dateReleased' defaultValue='backuplocationdefault'/> */}
 
-                <p>paid for?</p>
+                {/* <p>paid for?</p>
                 <label htmlFor='paidFor'>yes
                 <input type='radio' id='paidFor' name='payThing' />
                 </label>
@@ -104,7 +104,13 @@ export default function AddSong(props) {
 
                 <label htmlFor='paidFor2'>no
                 <input type='radio' id='paidFor2' name='shareable' defaultChecked />
-                </label>
+                </label> */}
+
+
+
+
+
+
 
                 {/* <label htmlFor='dateRawFilesReceived'>dateRawFilesReceived</label>
                 <input type='date' id='dateRawFilesReceived'/>

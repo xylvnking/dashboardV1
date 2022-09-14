@@ -13,7 +13,7 @@
 //             songMetadata: {
 //                 paidFor: true,
 //                 dateRawFilesReceived: 'date',
-//                 dateReleased: 'date',
+//                 dateAdded: 'date',
 //                 backupLocation: 'www.someurl.com'
 //             },
 //             fileVersions: [
@@ -61,7 +61,7 @@ export const fakeData = [
                     songNameStylized: 'the FIRSTsong NAME!!!!',
                     paidFor: true,
                     dateRawFilesReceived: new Date(),
-                    dateReleased: new Date(),
+                    dateAdded: new Date(),
                     backupLocation: 'www.someurl.com',
                     dateOfMostRecentEdit: new Date(),
                     shareable: true,
@@ -73,7 +73,7 @@ export const fakeData = [
                         artistName: 'dylanking6132',
                         songName: 'thefirstsongsname',
                         fileVersionName: `artistName-songName-dy-13-01-2022-0`,
-                        dateAdded: `January 1, 2022 at 12:00:00 am UTC-4`,
+                        dateAdded: new Date(),
                         revisionNote: `this is a revision note for first song`,
                         jobType: `mix`
                     },
@@ -81,7 +81,7 @@ export const fakeData = [
                         artistName: 'dylanking6132',
                         songName: 'thefirstsongsname',
                         fileVersionName: `artistName-songName-dy-13-01-2022-1`,
-                        dateAdded: `January 2, 2022 at 12:00:00 am UTC-4`,
+                        dateAdded: new Date(),
                         revisionNote: `this is a revision note for second song`,
                         jobType: `mix`
                     },
@@ -89,7 +89,7 @@ export const fakeData = [
                         artistName: 'dylanking6132',
                         songName: 'thefirstsongsname',
                         fileVersionName: `artistName-songName-dy-13-01-2022-2`,
-                        dateAdded: `January 3, 2022 at 12:00:00 am UTC-4`,
+                        dateAdded: new Date(),
                         revisionNote: `this is a revision note for third song`,
                         jobType: `mix`
                     },
@@ -102,10 +102,10 @@ export const fakeData = [
                     songName: 'thesecondsongsname',
                     songNameStylized: 'the secSECSECONDg NAME!!!!',
                     paidFor: true,
-                    dateRawFilesReceived: 'date',
-                    dateReleased: 'date',
+                    dateRawFilesReceived: new Date(),
+                    dateAdded: new Date(),
                     backupLocation: 'www.someurl.com',
-                    dateOfMostRecentEdit: 'some date object',
+                    dateOfMostRecentEdit: new Date(),
                     shareable: true,
                     isPartofAlbum: false,
                 },
@@ -114,7 +114,7 @@ export const fakeData = [
                         artistName: 'dylanking6132',
                         songName: 'thesecondsongsname',
                         fileVersionName: `artistName-songName-dy-13-01-2022-0`,
-                        dateAdded: `January 1, 2022 at 12:00:00 am UTC-4`,
+                        dateAdded: new Date(),
                         revisionNote: `this is a revision note for first song`,
                         jobType: `mix`
                     },
@@ -122,7 +122,7 @@ export const fakeData = [
                         artistName: 'dylanking6132',
                         songName: 'thesecondsongsname',
                         fileVersionName: `artistName-songName-dy-13-01-2022-1`,
-                        dateAdded: `January 2, 2022 at 12:00:00 am UTC-4`,
+                        dateAdded: new Date(),
                         revisionNote: `this is a revision note for second song`,
                         jobType: `mix`
                     },
@@ -130,7 +130,7 @@ export const fakeData = [
                         artistName: 'dylanking6132',
                         songName: 'thesecondsongsname',
                         fileVersionName: `artistName-songName-dy-13-01-2022-2`,
-                        dateAdded: `January 3, 2022 at 12:00:00 am UTC-4`,
+                        dateAdded: new Date(),
                         revisionNote: `this is a revision note for third song`,
                         jobType: `mix`
                     },
@@ -143,10 +143,10 @@ export const fakeData = [
                     songName: 'thethirdsongsname',
                     songNameStylized: 'tTHIRDME!!!!',
                     paidFor: true,
-                    dateRawFilesReceived: 'date',
-                    dateReleased: 'date',
+                    dateRawFilesReceived: new Date(),
+                    dateAdded: new Date(),
                     backupLocation: 'www.someurl.com',
-                    dateOfMostRecentEdit: 'some date object',
+                    dateOfMostRecentEdit: new Date(),
                     shareable: true,
                     isPartofAlbum: true,
                     albumName: 'afakealbumname',
@@ -156,7 +156,7 @@ export const fakeData = [
                         artistName: 'dylanking6132',
                         songName: 'thethirdsongsname',
                         fileVersionName: `artistName-songName-dy-13-01-2022-0`,
-                        dateAdded: `January 1, 2022 at 12:00:00 am UTC-4`,
+                        dateAdded: new Date(),
                         revisionNote: `this is a revision note for first song`,
                         jobType: `mix`
                     },
@@ -164,7 +164,7 @@ export const fakeData = [
                         artistName: 'dylanking6132',
                         songName: 'thethirdsongsname',
                         fileVersionName: `artistName-songName-dy-13-01-2022-1`,
-                        dateAdded: `January 2, 2022 at 12:00:00 am UTC-4`,
+                        dateAdded: new Date(),
                         revisionNote: `this is a revision note for second song`,
                         jobType: `mix`
                     },
@@ -172,7 +172,7 @@ export const fakeData = [
                         artistName: 'dylanking6132',
                         songName: 'thethirdsongsname',
                         fileVersionName: `artistName-songName-dy-13-01-2022-2`,
-                        dateAdded: `January 3, 2022 at 12:00:00 am UTC-4`,
+                        dateAdded: new Date(),
                         revisionNote: `this is a revision note for third song`,
                         jobType: `mix`
                     },
@@ -185,10 +185,10 @@ export const fakeData = [
                     songName: 'fourthsonganme',
                     songNameStylized: 'faurth!!!!',
                     paidFor: true,
-                    dateRawFilesReceived: 'date',
-                    dateReleased: 'date',
+                    dateRawFilesReceived: new Date(),
+                    dateAdded: new Date(),
                     backupLocation: 'www.someurl.com',
-                    dateOfMostRecentEdit: 'some date object',
+                    dateOfMostRecentEdit: new Date(),
                     shareable: true,
                     isPartofAlbum: true,
                     albumName: 'afakealbumname',
@@ -198,7 +198,7 @@ export const fakeData = [
                         artistName: 'dylanking6132',
                         songName: 'fourthsonganme',
                         fileVersionName: `artistName-songName-dy-13-01-2022-0`,
-                        dateAdded: `January 1, 2022 at 12:00:00 am UTC-4`,
+                        dateAdded: new Date(),
                         revisionNote: `this is a revision note for first song`,
                         jobType: `mix`
                     },
@@ -206,7 +206,7 @@ export const fakeData = [
                         artistName: 'dylanking6132',
                         songName: 'fourthsonganme',
                         fileVersionName: `artistName-songName-dy-13-01-2022-1`,
-                        dateAdded: `January 2, 2022 at 12:00:00 am UTC-4`,
+                        dateAdded: new Date(),
                         revisionNote: `this is a revision note for second song`,
                         jobType: `mix`
                     },
@@ -214,7 +214,7 @@ export const fakeData = [
                         artistName: 'dylanking6132',
                         songName: 'fourthsonganme',
                         fileVersionName: `artistName-songName-dy-13-01-2022-2`,
-                        dateAdded: `January 3, 2022 at 12:00:00 am UTC-4`,
+                        dateAdded: new Date(),
                         revisionNote: `this is a revision note for third song`,
                         jobType: `mix`
                     },
@@ -222,279 +222,279 @@ export const fakeData = [
                 ]
             },
         ],
-        albums: [
-            {
-                albumMetadata: {
+        // albums: [
+        //     {
+        //         albumMetadata: {
 
-                },
-                songs: [
-                    {
-                        songMetadata: {
-                            artistName: 'dylanking6132',
-                            songName: 'thefirstsongsname',
-                            songNameStylized: 'the FIRSTsong NAME!!!!',
-                            paidFor: true,
-                            dateRawFilesReceived: 'date',
-                            dateReleased: 'date',
-                            backupLocation: 'www.someurl.com',
-                            dateOfMostRecentEdit: 'some date object',
-                            shareable: true,
-                            isPartofAlbum: false,
+        //         },
+        //         songs: [
+        //             {
+        //                 songMetadata: {
+        //                     artistName: 'dylanking6132',
+        //                     songName: 'thefirstsongsname',
+        //                     songNameStylized: 'the FIRSTsong NAME!!!!',
+        //                     paidFor: true,
+        //                     dateRawFilesReceived: 'date',
+        //                     dateAdded: 'date',
+        //                     backupLocation: 'www.someurl.com',
+        //                     dateOfMostRecentEdit: 'some date object',
+        //                     shareable: true,
+        //                     isPartofAlbum: false,
                             
-                        },
-                        fileVersions: [
-                            {
-                                artistName: 'dylanking6132',
-                                songName: 'thefirstsongsname',
-                                fileVersionName: `artistName-songName-dy-13-01-2022-0`,
-                                dateAdded: `January 1, 2022 at 12:00:00 am UTC-4`,
-                                revisionNote: `this is a revision note for first song`,
-                                jobType: `mix`
-                            },
-                            {
-                                artistName: 'dylanking6132',
-                                songName: 'thefirstsongsname',
-                                fileVersionName: `artistName-songName-dy-13-01-2022-1`,
-                                dateAdded: `January 2, 2022 at 12:00:00 am UTC-4`,
-                                revisionNote: `this is a revision note for second song`,
-                                jobType: `mix`
-                            },
-                            {
-                                artistName: 'dylanking6132',
-                                songName: 'thefirstsongsname',
-                                fileVersionName: `artistName-songName-dy-13-01-2022-2`,
-                                dateAdded: `January 3, 2022 at 12:00:00 am UTC-4`,
-                                revisionNote: `this is a revision note for third song`,
-                                jobType: `mix`
-                            },
+        //                 },
+        //                 fileVersions: [
+        //                     {
+        //                         artistName: 'dylanking6132',
+        //                         songName: 'thefirstsongsname',
+        //                         fileVersionName: `artistName-songName-dy-13-01-2022-0`,
+        //                         dateAdded: `January 1, 2022 at 12:00:00 am UTC-4`,
+        //                         revisionNote: `this is a revision note for first song`,
+        //                         jobType: `mix`
+        //                     },
+        //                     {
+        //                         artistName: 'dylanking6132',
+        //                         songName: 'thefirstsongsname',
+        //                         fileVersionName: `artistName-songName-dy-13-01-2022-1`,
+        //                         dateAdded: `January 2, 2022 at 12:00:00 am UTC-4`,
+        //                         revisionNote: `this is a revision note for second song`,
+        //                         jobType: `mix`
+        //                     },
+        //                     {
+        //                         artistName: 'dylanking6132',
+        //                         songName: 'thefirstsongsname',
+        //                         fileVersionName: `artistName-songName-dy-13-01-2022-2`,
+        //                         dateAdded: `January 3, 2022 at 12:00:00 am UTC-4`,
+        //                         revisionNote: `this is a revision note for third song`,
+        //                         jobType: `mix`
+        //                     },
                             
-                        ]
-                    },
-                    {
-                        songMetadata: {
-                            artistName: 'dylanking6132',
-                            songName: 'thesecondsongsname',
-                            songNameStylized: 'the secSECSECONDg NAME!!!!',
-                            paidFor: true,
-                            dateRawFilesReceived: 'date',
-                            dateReleased: 'date',
-                            backupLocation: 'www.someurl.com',
-                            dateOfMostRecentEdit: 'some date object',
-                            shareable: true,
-                            isPartofAlbum: false,
-                        },
-                        fileVersions: [
-                            {
-                                artistName: 'dylanking6132',
-                                songName: 'thesecondsongsname',
-                                fileVersionName: `artistName-songName-dy-13-01-2022-0`,
-                                dateAdded: `January 1, 2022 at 12:00:00 am UTC-4`,
-                                revisionNote: `this is a revision note for first song`,
-                                jobType: `mix`
-                            },
-                            {
-                                artistName: 'dylanking6132',
-                                songName: 'thesecondsongsname',
-                                fileVersionName: `artistName-songName-dy-13-01-2022-1`,
-                                dateAdded: `January 2, 2022 at 12:00:00 am UTC-4`,
-                                revisionNote: `this is a revision note for second song`,
-                                jobType: `mix`
-                            },
-                            {
-                                artistName: 'dylanking6132',
-                                songName: 'thesecondsongsname',
-                                fileVersionName: `artistName-songName-dy-13-01-2022-2`,
-                                dateAdded: `January 3, 2022 at 12:00:00 am UTC-4`,
-                                revisionNote: `this is a revision note for third song`,
-                                jobType: `mix`
-                            },
+        //                 ]
+        //             },
+        //             {
+        //                 songMetadata: {
+        //                     artistName: 'dylanking6132',
+        //                     songName: 'thesecondsongsname',
+        //                     songNameStylized: 'the secSECSECONDg NAME!!!!',
+        //                     paidFor: true,
+        //                     dateRawFilesReceived: 'date',
+        //                     dateAdded: 'date',
+        //                     backupLocation: 'www.someurl.com',
+        //                     dateOfMostRecentEdit: 'some date object',
+        //                     shareable: true,
+        //                     isPartofAlbum: false,
+        //                 },
+        //                 fileVersions: [
+        //                     {
+        //                         artistName: 'dylanking6132',
+        //                         songName: 'thesecondsongsname',
+        //                         fileVersionName: `artistName-songName-dy-13-01-2022-0`,
+        //                         dateAdded: `January 1, 2022 at 12:00:00 am UTC-4`,
+        //                         revisionNote: `this is a revision note for first song`,
+        //                         jobType: `mix`
+        //                     },
+        //                     {
+        //                         artistName: 'dylanking6132',
+        //                         songName: 'thesecondsongsname',
+        //                         fileVersionName: `artistName-songName-dy-13-01-2022-1`,
+        //                         dateAdded: `January 2, 2022 at 12:00:00 am UTC-4`,
+        //                         revisionNote: `this is a revision note for second song`,
+        //                         jobType: `mix`
+        //                     },
+        //                     {
+        //                         artistName: 'dylanking6132',
+        //                         songName: 'thesecondsongsname',
+        //                         fileVersionName: `artistName-songName-dy-13-01-2022-2`,
+        //                         dateAdded: `January 3, 2022 at 12:00:00 am UTC-4`,
+        //                         revisionNote: `this is a revision note for third song`,
+        //                         jobType: `mix`
+        //                     },
                             
-                        ]
-                    },
-                    {
-                        songMetadata: {
-                            artistName: 'dylanking6132',
-                            songName: 'thethirdsongsname',
-                            songNameStylized: 'tTHIRDME!!!!',
-                            paidFor: true,
-                            dateRawFilesReceived: 'date',
-                            dateReleased: 'date',
-                            backupLocation: 'www.someurl.com',
-                            dateOfMostRecentEdit: 'some date object',
-                            shareable: true,
-                            isPartofAlbum: true,
-                            albumName: 'afakealbumname',
-                        },
-                        fileVersions: [
-                            {
-                                artistName: 'dylanking6132',
-                                songName: 'thethirdsongsname',
-                                fileVersionName: `artistName-songName-dy-13-01-2022-0`,
-                                dateAdded: `January 1, 2022 at 12:00:00 am UTC-4`,
-                                revisionNote: `this is a revision note for first song`,
-                                jobType: `mix`
-                            },
-                            {
-                                artistName: 'dylanking6132',
-                                songName: 'thethirdsongsname',
-                                fileVersionName: `artistName-songName-dy-13-01-2022-1`,
-                                dateAdded: `January 2, 2022 at 12:00:00 am UTC-4`,
-                                revisionNote: `this is a revision note for second song`,
-                                jobType: `mix`
-                            },
-                            {
-                                artistName: 'dylanking6132',
-                                songName: 'thethirdsongsname',
-                                fileVersionName: `artistName-songName-dy-13-01-2022-2`,
-                                dateAdded: `January 3, 2022 at 12:00:00 am UTC-4`,
-                                revisionNote: `this is a revision note for third song`,
-                                jobType: `mix`
-                            },
+        //                 ]
+        //             },
+        //             {
+        //                 songMetadata: {
+        //                     artistName: 'dylanking6132',
+        //                     songName: 'thethirdsongsname',
+        //                     songNameStylized: 'tTHIRDME!!!!',
+        //                     paidFor: true,
+        //                     dateRawFilesReceived: 'date',
+        //                     dateAdded: 'date',
+        //                     backupLocation: 'www.someurl.com',
+        //                     dateOfMostRecentEdit: 'some date object',
+        //                     shareable: true,
+        //                     isPartofAlbum: true,
+        //                     albumName: 'afakealbumname',
+        //                 },
+        //                 fileVersions: [
+        //                     {
+        //                         artistName: 'dylanking6132',
+        //                         songName: 'thethirdsongsname',
+        //                         fileVersionName: `artistName-songName-dy-13-01-2022-0`,
+        //                         dateAdded: `January 1, 2022 at 12:00:00 am UTC-4`,
+        //                         revisionNote: `this is a revision note for first song`,
+        //                         jobType: `mix`
+        //                     },
+        //                     {
+        //                         artistName: 'dylanking6132',
+        //                         songName: 'thethirdsongsname',
+        //                         fileVersionName: `artistName-songName-dy-13-01-2022-1`,
+        //                         dateAdded: `January 2, 2022 at 12:00:00 am UTC-4`,
+        //                         revisionNote: `this is a revision note for second song`,
+        //                         jobType: `mix`
+        //                     },
+        //                     {
+        //                         artistName: 'dylanking6132',
+        //                         songName: 'thethirdsongsname',
+        //                         fileVersionName: `artistName-songName-dy-13-01-2022-2`,
+        //                         dateAdded: `January 3, 2022 at 12:00:00 am UTC-4`,
+        //                         revisionNote: `this is a revision note for third song`,
+        //                         jobType: `mix`
+        //                     },
                             
-                        ]
-                    },
-                    {
-                        songMetadata: {
-                            artistName: 'dylanking6132',
-                            songName: 'fourthsonganme',
-                            songNameStylized: 'faurth!!!!',
-                            paidFor: true,
-                            dateRawFilesReceived: 'date',
-                            dateReleased: 'date',
-                            backupLocation: 'www.someurl.com',
-                            dateOfMostRecentEdit: 'some date object',
-                            shareable: true,
-                            isPartofAlbum: true,
-                            albumName: 'afakealbumname',
-                        },
-                        fileVersions: [
-                            {
-                                artistName: 'dylanking6132',
-                                songName: 'fourthsonganme',
-                                fileVersionName: `artistName-songName-dy-13-01-2022-0`,
-                                dateAdded: `January 1, 2022 at 12:00:00 am UTC-4`,
-                                revisionNote: `this is a revision note for first song`,
-                                jobType: `mix`
-                            },
-                            {
-                                artistName: 'dylanking6132',
-                                songName: 'fourthsonganme', 
-                                fileVersionName: `artistName-songName-dy-13-01-2022-1`,
-                                dateAdded: `January 2, 2022 at 12:00:00 am UTC-4`,
-                                revisionNote: `this is a revision note for second song`,
-                                jobType: `mix`
-                            },
-                            {
-                                artistName: 'dylanking6132',
-                                songName: 'fourthsonganme',
-                                fileVersionName: `artistName-songName-dy-13-01-2022-2`,
-                                dateAdded: `January 3, 2022 at 12:00:00 am UTC-4`,
-                                revisionNote: `this is a revision note for third song`,
-                                jobType: `mix`
-                            },
+        //                 ]
+        //             },
+        //             {
+        //                 songMetadata: {
+        //                     artistName: 'dylanking6132',
+        //                     songName: 'fourthsonganme',
+        //                     songNameStylized: 'faurth!!!!',
+        //                     paidFor: true,
+        //                     dateRawFilesReceived: 'date',
+        //                     dateAdded: 'date',
+        //                     backupLocation: 'www.someurl.com',
+        //                     dateOfMostRecentEdit: 'some date object',
+        //                     shareable: true,
+        //                     isPartofAlbum: true,
+        //                     albumName: 'afakealbumname',
+        //                 },
+        //                 fileVersions: [
+        //                     {
+        //                         artistName: 'dylanking6132',
+        //                         songName: 'fourthsonganme',
+        //                         fileVersionName: `artistName-songName-dy-13-01-2022-0`,
+        //                         dateAdded: `January 1, 2022 at 12:00:00 am UTC-4`,
+        //                         revisionNote: `this is a revision note for first song`,
+        //                         jobType: `mix`
+        //                     },
+        //                     {
+        //                         artistName: 'dylanking6132',
+        //                         songName: 'fourthsonganme', 
+        //                         fileVersionName: `artistName-songName-dy-13-01-2022-1`,
+        //                         dateAdded: `January 2, 2022 at 12:00:00 am UTC-4`,
+        //                         revisionNote: `this is a revision note for second song`,
+        //                         jobType: `mix`
+        //                     },
+        //                     {
+        //                         artistName: 'dylanking6132',
+        //                         songName: 'fourthsonganme',
+        //                         fileVersionName: `artistName-songName-dy-13-01-2022-2`,
+        //                         dateAdded: `January 3, 2022 at 12:00:00 am UTC-4`,
+        //                         revisionNote: `this is a revision note for third song`,
+        //                         jobType: `mix`
+        //                     },
                             
-                        ]
-                    },
-                ],
-            },
-        ]
+        //                 ]
+        //             },
+        //         ],
+        //     },
+        // ]
     },
-    {
-        metadata: {
-            artistName: 'dylanking600',
-            artistNameStylized: 'The SEcOND Artist!!',
-            uid: 'QYTUFmkQ9TYQvDTqL3LEcxgt6S43', 
-            email: 'dylan.king600@gmail.com',
-            whateverelse: 'other data',
-            coverPhoto: 'www.someurl.com',
-            profilePhoto: 'https://lh3.googleusercontent.com/a-/AFdZucr6-80QvFuYjgw0YWqJiwQfQnjXYH3jsw6S55zflQ=s96-c'
+    // {
+    //     metadata: {
+    //         artistName: 'dylanking600',
+    //         artistNameStylized: 'The SEcOND Artist!!',
+    //         uid: 'QYTUFmkQ9TYQvDTqL3LEcxgt6S43', 
+    //         email: 'dylan.king600@gmail.com',
+    //         whateverelse: 'other data',
+    //         coverPhoto: 'www.someurl.com',
+    //         profilePhoto: 'https://lh3.googleusercontent.com/a-/AFdZucr6-80QvFuYjgw0YWqJiwQfQnjXYH3jsw6S55zflQ=s96-c'
             
-        },
-        songs: [
-            {
-                songMetadata: {
-                    artistName: 'dylanking600',
-                    songName: 'thefirstsongsname',
-                    songNameStylized: 'the FIRSTsong NAME!!!!',
-                    paidFor: true,
-                    dateRawFilesReceived: 'date',
-                    dateReleased: 'date',
-                    backupLocation: 'www.someurl.com',
-                    dateOfMostRecentEdit: 'some date object',
-                    shareable: true,
-                    isPartofAlbum: false,
-                },
-                fileVersions: [
-                    {
-                        artistName: 'dylanking600',
-                        songName: 'thefirstsongsname',
-                        fileVersionName: `artistName-songName-dy-13-01-2022-0`,
-                        dateAdded: `January 1, 2022 at 12:00:00 am UTC-4`,
-                        revisionNote: `this is a revision note for first song`,
-                        jobType: `mix`
-                    },
-                    {
-                        artistName: 'dylanking600',
-                        songName: 'thefirstsongsname',
-                        fileVersionName: `artistName-songName-dy-13-01-2022-1`,
-                        dateAdded: `January 2, 2022 at 12:00:00 am UTC-4`,
-                        revisionNote: `this is a revision note for second song`,
-                        jobType: `mix`
-                    },
-                    {
-                        artistName: 'dylanking600',
-                        songName: 'thefirstsongsname',
-                        fileVersionName: `artistName-songName-dy-13-01-2022-2`,
-                        dateAdded: `January 3, 2022 at 12:00:00 am UTC-4`,
-                        revisionNote: `this is a revision note for third song`,
-                        jobType: `mix`
-                    },
+    //     },
+    //     songs: [
+    //         {
+    //             songMetadata: {
+    //                 artistName: 'dylanking600',
+    //                 songName: 'thefirstsongsname',
+    //                 songNameStylized: 'the FIRSTsong NAME!!!!',
+    //                 paidFor: true,
+    //                 dateRawFilesReceived: 'date',
+    //                 dateAdded: 'date',
+    //                 backupLocation: 'www.someurl.com',
+    //                 dateOfMostRecentEdit: 'some date object',
+    //                 shareable: true,
+    //                 isPartofAlbum: false,
+    //             },
+    //             fileVersions: [
+    //                 {
+    //                     artistName: 'dylanking600',
+    //                     songName: 'thefirstsongsname',
+    //                     fileVersionName: `artistName-songName-dy-13-01-2022-0`,
+    //                     dateAdded: `January 1, 2022 at 12:00:00 am UTC-4`,
+    //                     revisionNote: `this is a revision note for first song`,
+    //                     jobType: `mix`
+    //                 },
+    //                 {
+    //                     artistName: 'dylanking600',
+    //                     songName: 'thefirstsongsname',
+    //                     fileVersionName: `artistName-songName-dy-13-01-2022-1`,
+    //                     dateAdded: `January 2, 2022 at 12:00:00 am UTC-4`,
+    //                     revisionNote: `this is a revision note for second song`,
+    //                     jobType: `mix`
+    //                 },
+    //                 {
+    //                     artistName: 'dylanking600',
+    //                     songName: 'thefirstsongsname',
+    //                     fileVersionName: `artistName-songName-dy-13-01-2022-2`,
+    //                     dateAdded: `January 3, 2022 at 12:00:00 am UTC-4`,
+    //                     revisionNote: `this is a revision note for third song`,
+    //                     jobType: `mix`
+    //                 },
                     
-                ]
-            },
-            {
-                songMetadata: {
-                    artistName: 'dylanking600',
-                    songName: 'thesecondsongsname',
-                    songNameStylized: 'the secSECSECONDg NAME!!!!',
-                    paidFor: true,
-                    dateRawFilesReceived: 'date',
-                    dateReleased: 'date',
-                    backupLocation: 'www.someurl.com',
-                    dateOfMostRecentEdit: 'some date object',
-                    shareable: true,
-                    isPartofAlbum: false,
-                },
-                fileVersions: [
-                    {
-                        artistName: 'dylanking600',
-                        songName: 'thesecondsongsname',
-                        fileVersionName: `artistName-songName-dy-13-01-2022-0`,
-                        dateAdded: `January 1, 2022 at 12:00:00 am UTC-4`,
-                        revisionNote: `this is a revision note for first song`,
-                        jobType: `mix`
-                    },
-                    {
-                        artistName: 'dylanking600',
-                        songName: 'thesecondsongsname',
-                        fileVersionName: `artistName-songName-dy-13-01-2022-1`,
-                        dateAdded: `January 2, 2022 at 12:00:00 am UTC-4`,
-                        revisionNote: `this is a revision note for second song`,
-                        jobType: `mix`
-                    },
-                    {
-                        artistName: 'dylanking600',
-                        songName: 'thesecondsongsname',
-                        fileVersionName: `artistName-songName-dy-13-01-2022-2`,
-                        dateAdded: `January 3, 2022 at 12:00:00 am UTC-4`,
-                        revisionNote: `this is a revision note for third song`,
-                        jobType: `mix`
-                    },
+    //             ]
+    //         },
+    //         {
+    //             songMetadata: {
+    //                 artistName: 'dylanking600',
+    //                 songName: 'thesecondsongsname',
+    //                 songNameStylized: 'the secSECSECONDg NAME!!!!',
+    //                 paidFor: true,
+    //                 dateRawFilesReceived: 'date',
+    //                 dateAdded: 'date',
+    //                 backupLocation: 'www.someurl.com',
+    //                 dateOfMostRecentEdit: 'some date object',
+    //                 shareable: true,
+    //                 isPartofAlbum: false,
+    //             },
+    //             fileVersions: [
+    //                 {
+    //                     artistName: 'dylanking600',
+    //                     songName: 'thesecondsongsname',
+    //                     fileVersionName: `artistName-songName-dy-13-01-2022-0`,
+    //                     dateAdded: `January 1, 2022 at 12:00:00 am UTC-4`,
+    //                     revisionNote: `this is a revision note for first song`,
+    //                     jobType: `mix`
+    //                 },
+    //                 {
+    //                     artistName: 'dylanking600',
+    //                     songName: 'thesecondsongsname',
+    //                     fileVersionName: `artistName-songName-dy-13-01-2022-1`,
+    //                     dateAdded: `January 2, 2022 at 12:00:00 am UTC-4`,
+    //                     revisionNote: `this is a revision note for second song`,
+    //                     jobType: `mix`
+    //                 },
+    //                 {
+    //                     artistName: 'dylanking600',
+    //                     songName: 'thesecondsongsname',
+    //                     fileVersionName: `artistName-songName-dy-13-01-2022-2`,
+    //                     dateAdded: `January 3, 2022 at 12:00:00 am UTC-4`,
+    //                     revisionNote: `this is a revision note for third song`,
+    //                     jobType: `mix`
+    //                 },
                     
-                ]
-            },
-        ]
-    },
+    //             ]
+    //         },
+    //     ]
+    // },
 ]
 // // export const fakeData = {
 // //     metadata: {
@@ -511,7 +511,7 @@ export const fakeData = [
 // //             songMetadata: {
 // //                 paidFor: true,
 // //                 dateRawFilesReceived: 'date',
-// //                 dateReleased: 'date',
+// //                 dateAdded: 'date',
 // //                 backupLocation: 'www.someurl.com'
 // //             },
 // //             fileVersions: [
@@ -557,7 +557,7 @@ export const fakeData = [
 //                     songName: 'the first songs name',
 //                     paidFor: true,
 //                     dateRawFilesReceived: 'date',
-//                     dateReleased: 'date',
+//                     dateAdded: 'date',
 //                     backupLocation: 'www.someurl.com'
 //                 },
 //                 fileVersions: [
@@ -587,7 +587,7 @@ export const fakeData = [
 //                     songName: 'the second songs name',
 //                     paidFor: true,
 //                     dateRawFilesReceived: 'date',
-//                     dateReleased: 'date',
+//                     dateAdded: 'date',
 //                     backupLocation: 'www.someurl.com'
 //                 },
 //                 fileVersions: [
@@ -631,7 +631,7 @@ export const fakeData = [
 //                     songName: 'the first songs name',
 //                     paidFor: true,
 //                     dateRawFilesReceived: 'date',
-//                     dateReleased: 'date',
+//                     dateAdded: 'date',
 //                     backupLocation: 'www.someurl.com'
 //                 },
 //                 fileVersions: [
@@ -661,7 +661,7 @@ export const fakeData = [
 //                     songName: 'the second songs name',
 //                     paidFor: true,
 //                     dateRawFilesReceived: 'date',
-//                     dateReleased: 'date',
+//                     dateAdded: 'date',
 //                     backupLocation: 'www.someurl.com'
 //                 },
 //                 fileVersions: [

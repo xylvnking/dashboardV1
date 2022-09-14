@@ -9,11 +9,12 @@ export default function AddFileVersion(props) {
     const addFileVersion = async (event) => {
         event.preventDefault()
         console.log('add file version here')
+        console.log(typeof event.target[3].value)
         const newFileVersion = {
             artistName: event.target[0].value,
             songName: event.target[1].value,
             fileVersionName: event.target[2].value,
-            dateAdded: event.target[3].value,
+            dateAdded: new Date(),
             revisionNote: event.target[4].value,
             jobType: event.target[5].value
         }
@@ -42,17 +43,17 @@ export default function AddFileVersion(props) {
         <h3>add a file version:</h3>
         <form style={{display: 'flex', flexDirection: 'column'}} onSubmit={addFileVersion}>
 
-            <label htmlFor='artistName'>artistName</label>
-            <input type='text' id='artistName' name='artistName' value={props.artistName} readOnly required/>
+            {/* <label htmlFor='artistName'>artistName</label> */}
+            <input type='hidden' id='artistName' name='artistName' defaultValue={props.artistName} readOnly required/>
 
-            <label htmlFor='songName'>songName</label>
-            <input type='text' id='songName' name='songName' value={props.songData.songMetadata.songName} readOnly required/>
+            {/* <label htmlFor='songName'>songName</label> */}
+            <input type='hidden' id='songName' name='songName' defaultValue={props.songData.songMetadata.songName} readOnly required/>
 
             <label htmlFor='fileVersionName'>file version name</label>
             <input type='text' id='fileVersionName' name='fileVersionName' defaultValue='filenamegoeshere' required/>
 
-            <label htmlFor='dateAdded'>dateAdded</label>
-            <input type='text' id='dateAdded' name='dateAdded' defaultValue='somedate, make this an actual date'/>
+            {/* <label htmlFor='dateAdded'>dateAdded</label> */}
+            <input type='hidden' id='dateAdded' name='dateAdded' defaultValue={new Date()}/>
 
             <label htmlFor='revisionNote'>revisionNote</label>
             <input type='text' id='revisionNote' name='revisionNote' defaultValue='no revision notes yet!'/>

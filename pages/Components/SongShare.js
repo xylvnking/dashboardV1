@@ -14,8 +14,8 @@ export default function SongShare(props) {
                 </Link>
             <ul>
                 <li>song name: {props.songData.songMetadata.songName}</li>
-                <li>date released: {props.songData.songMetadata.dateReleased}</li>
-                <li>date of most recent edit: {props.songData.songMetadata.dateOfMostRecentEdit}</li>
+                {/* <li>date released: {props.songData.songMetadata.dateReleased}</li> */}
+                <li>date of most recent edit: {Date(props.songData.songMetadata.dateOfMostRecentEdit)}</li>
             </ul>
         </div>
         }

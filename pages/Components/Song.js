@@ -75,11 +75,12 @@ export default function Song(props) {
             <ul key= {props.songIndex}>
                 <h2>song name: {props.songData.songMetadata.songName}</h2>
                 <li>paid for: {props.songData.songMetadata.paidFor ? 'yes' : 'no'}</li>
-                <li>date raw files received: {props.songData.songMetadata.dateRawFilesReceived}</li>
-                <li>date released: {props.songData.songMetadata.dateReleased}</li>
+                {/* <li>date raw files received: {props.songData.songMetadata.dateRawFilesReceived}</li> */}
+                <li>date added: {Date(props.songData.songMetadata.dateAdded)}</li>
                 <li>backup location: {props.songData.songMetadata.backupLocation}</li>
-                <li>date of most recent edit: {props.songData.songMetadata.dateOfMostRecentEdit}</li>
+                {/* <li>date of most recent edit: {props.songData.songMetadata.dateOfMostRecentEdit}</li> */}
                 {
+                    props.songData.fileVersions &&
                     props.songData.fileVersions.map((x, fileVersionIndex) => {
                         return (
                             <details 
@@ -92,8 +93,8 @@ export default function Song(props) {
                                 
                                 <ul>
                                     <li>file version name: {x.fileVersionName}</li>
-                                    <li>date added: {x.dateAdded}</li>
-                                    <li>Job type: {x.jobType}</li>
+                                    <li>date added: {Date(x.dateAdded)}</li>
+                                    {/* <li>Job type: {x.jobType}</li> */}
                                     {/* <li>file version index {fileVersionIndex}</li> */}
                                     {// ONLY SHOW TEXT AREA FOR MOST RECENT FILE VERSION [0]
                                         fileVersionIndex == 0 

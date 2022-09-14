@@ -66,7 +66,6 @@ export default function dashboard() {
             })
         }
 
-        <h3>maybe remake the song component</h3>
         <details>
             <summary>add artist</summary>
             <AddArtist />

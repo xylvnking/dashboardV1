@@ -32,9 +32,13 @@ export default function FileVersion(props) {
                 <li>{props.fileVersion.artistName}</li>
                 <li><strong>Song name:</strong></li>
                 <li>{props.fileVersion.songName}</li>
+                <li><strong>dateAdded:</strong></li>
+                <li>{Date(props.fileVersion.dateAdded)}</li>
+                <li><strong>Revision note:</strong></li>
+                <li>{props.fileVersion.revisionNote}</li>
 
             </ul>
-        <ul>
+        {/* <ul>
             {
                 Object.keys(fileVersionData).map((fileVersionField, fileversionFieldIndex) => {
                     return (
@@ -45,7 +49,7 @@ export default function FileVersion(props) {
                     )
                 })
             }
-        </ul>
+        </ul> */}
         <button onClick={() => deleteFileVersion()}>delete file version</button>
     </main>
   )

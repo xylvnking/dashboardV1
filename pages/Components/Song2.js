@@ -52,6 +52,8 @@ export default function Song2(props) {
             <li>{songData.songMetadata.songName}</li>
             <li><strong>Date of most recent edit:</strong></li>
             <li>{Date(songData.songMetadata.dateOfMostRecentEdit)}</li>
+            <li><strong>Date added:</strong></li>
+            <li>{Date(songData.songMetadata.dateOfMostRecentEdit)}</li>
             <details>
                 <summary>more metadata</summary>
                 {
@@ -77,8 +79,10 @@ export default function Song2(props) {
 
             />
 
-
-            {songData.fileVersions.map((fileVersion, fileVersionIndex) => {
+            {
+                
+                songData.fileVersions &&
+            songData.fileVersions.map((fileVersion, fileVersionIndex) => {
                 return (
 
                     <FileVersion 
