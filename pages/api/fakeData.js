@@ -75,7 +75,8 @@ export const fakeData = [
                         fileVersionName: `artistName-songName-dy-13-01-2022-0`,
                         dateAdded: new Date(),
                         revisionNote: `this is a revision note for first song`,
-                        jobType: `mix`
+                        jobType: `mix`,
+                        pathReference: 'masters/YEAHHHhhhhhh',
                     },
                     {
                         artistName: 'dylanking6132',
@@ -83,7 +84,8 @@ export const fakeData = [
                         fileVersionName: `artistName-songName-dy-13-01-2022-1`,
                         dateAdded: new Date(),
                         revisionNote: `this is a revision note for second song`,
-                        jobType: `mix`
+                        jobType: `mix`,
+                        pathReference: 'masters/YEAHHHhhhhhh',
                     },
                     {
                         artistName: 'dylanking6132',
@@ -91,7 +93,8 @@ export const fakeData = [
                         fileVersionName: `artistName-songName-dy-13-01-2022-2`,
                         dateAdded: new Date(),
                         revisionNote: `this is a revision note for third song`,
-                        jobType: `mix`
+                        jobType: `mix`,
+                        pathReference: 'masters/YEAHHHhhhhhh',
                     },
                     
                 ]
@@ -116,7 +119,8 @@ export const fakeData = [
                         fileVersionName: `artistName-songName-dy-13-01-2022-0`,
                         dateAdded: new Date(),
                         revisionNote: `this is a revision note for first song`,
-                        jobType: `mix`
+                        jobType: `mix`,
+                        pathReference: 'masters/YEAHHHhhhhhh',
                     },
                     {
                         artistName: 'dylanking6132',
@@ -124,7 +128,8 @@ export const fakeData = [
                         fileVersionName: `artistName-songName-dy-13-01-2022-1`,
                         dateAdded: new Date(),
                         revisionNote: `this is a revision note for second song`,
-                        jobType: `mix`
+                        jobType: `mix`,
+                        pathReference: 'masters/YEAHHHhhhhhh',
                     },
                     {
                         artistName: 'dylanking6132',
@@ -132,7 +137,8 @@ export const fakeData = [
                         fileVersionName: `artistName-songName-dy-13-01-2022-2`,
                         dateAdded: new Date(),
                         revisionNote: `this is a revision note for third song`,
-                        jobType: `mix`
+                        jobType: `mix`,
+                        pathReference: 'masters/YEAHHHhhhhhh',
                     },
                     
                 ]
@@ -158,7 +164,8 @@ export const fakeData = [
                         fileVersionName: `artistName-songName-dy-13-01-2022-0`,
                         dateAdded: new Date(),
                         revisionNote: `this is a revision note for first song`,
-                        jobType: `mix`
+                        jobType: `mix`,
+                        pathReference: 'masters/YEAHHHhhhhhh',
                     },
                     {
                         artistName: 'dylanking6132',
@@ -166,7 +173,8 @@ export const fakeData = [
                         fileVersionName: `artistName-songName-dy-13-01-2022-1`,
                         dateAdded: new Date(),
                         revisionNote: `this is a revision note for second song`,
-                        jobType: `mix`
+                        jobType: `mix`,
+                        pathReference: 'masters/YEAHHHhhhhhh',
                     },
                     {
                         artistName: 'dylanking6132',
@@ -174,7 +182,8 @@ export const fakeData = [
                         fileVersionName: `artistName-songName-dy-13-01-2022-2`,
                         dateAdded: new Date(),
                         revisionNote: `this is a revision note for third song`,
-                        jobType: `mix`
+                        jobType: `mix`,
+                        pathReference: 'masters/YEAHHHhhhhhh',
                     },
                     
                 ]
@@ -200,7 +209,8 @@ export const fakeData = [
                         fileVersionName: `artistName-songName-dy-13-01-2022-0`,
                         dateAdded: new Date(),
                         revisionNote: `this is a revision note for first song`,
-                        jobType: `mix`
+                        jobType: `mix`,
+                        pathReference: 'masters/YEAHHHhhhhhh',
                     },
                     {
                         artistName: 'dylanking6132',
@@ -208,7 +218,8 @@ export const fakeData = [
                         fileVersionName: `artistName-songName-dy-13-01-2022-1`,
                         dateAdded: new Date(),
                         revisionNote: `this is a revision note for second song`,
-                        jobType: `mix`
+                        jobType: `mix`,
+                        pathReference: 'masters/YEAHHHhhhhhh',
                     },
                     {
                         artistName: 'dylanking6132',
@@ -216,7 +227,8 @@ export const fakeData = [
                         fileVersionName: `artistName-songName-dy-13-01-2022-2`,
                         dateAdded: new Date(),
                         revisionNote: `this is a revision note for third song`,
-                        jobType: `mix`
+                        jobType: `mix`,
+                        pathReference: 'masters/YEAHHHhhhhhh',
                     },
                     
                 ]

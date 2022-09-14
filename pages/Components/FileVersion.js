@@ -1,10 +1,34 @@
 import React, {useState, useEffect} from 'react'
 import { collection, addDoc, doc, getDoc, setDoc, updateDoc } from "firebase/firestore"; 
-import { db, auth, provider } from '../../firebase-config';
+import { db, auth, provider, storage } from '../../firebase-config';
+import { getStorage, ref, getDownloadURL } from "firebase/storage";
+
+
 
 export default function FileVersion(props) {
-    const [fileVersionData, setFileVersionData] = useState(props.fileVersion)
 
+    const [fileVersionData, setFileVersionData] = useState(props.fileVersion)
+    const [downloadURL, setDownloadUrl] = useState('')
+
+    
+    useEffect(() => {
+        const getCurrentDownloadUrl = async () => {
+            // console.log(props.fileVersion.pathReference)
+            const fileVersionRef = ref(storage, props.fileVersion.pathReference);
+            getDownloadURL(fileVersionRef)
+                    .then((url) => {
+                        // console.log(url)
+                        setDownloadUrl(url)
+                        // return url
+                        // setDownloadUrl(url)
+                    }).catch((error) => {
+                        console.log(error)
+                    })
+    
+        }
+        getCurrentDownloadUrl()
+
+    }, [])
     const deleteFileVersion = async () => {
 
         let tempFileVersionsArray
@@ -26,6 +50,8 @@ export default function FileVersion(props) {
   return (
       fileVersionData &&
     <main className='lightBorder'>
+        <button onClick={() => log()}>log</button>
+        <button onClick={() => console.log(downloadURL)}>check download url state</button>
             <h3>{props.fileVersion.fileVersionName}</h3>
             <ul>
                 <li><strong>Artist name:</strong></li>
@@ -36,6 +62,7 @@ export default function FileVersion(props) {
                 <li>{Date(props.fileVersion.dateAdded)}</li>
                 <li><strong>Revision note:</strong></li>
                 <li>{props.fileVersion.revisionNote}</li>
+                <audio preload='none' crossOrigin='use-credentials' controls src={downloadURL}></audio>
 
             </ul>
         {/* <ul>
