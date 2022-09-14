@@ -32,13 +32,18 @@ export default function Song(props) {
     const handleTyping = (eventValue, songIndex, fileVersionIndex) => {
         setIsTyping(true)
 
-        const artistDataClone = JSON.parse(JSON.stringify(props.artistData)) // clone state
-        artistDataClone.songs[songIndex].fileVersions[fileVersionIndex].revisionNote = eventValue
-        props.setArtistData(artistDataClone)
-        const docRef = doc(db, 'artists', props.artistData.metadata.artistName); // get reference to doc
         
         clearTimeout(revisionTypingTimeout2) // clear timer
         revisionTypingTimeout2 = setTimeout(() => { // use timer
+            
+            const artistDataClone = JSON.parse(JSON.stringify(props.artistData)) // clone state
+            artistDataClone.songs[songIndex].fileVersions[fileVersionIndex].revisionNote = eventValue
+            props.setArtistData(artistDataClone)
+            const docRef = doc(db, 'artists', props.artistData.metadata.artistName); // get reference to doc
+
+
+
+
             updateDoc(docRef, artistDataClone)
             setIsTyping(false)
         }, 500)

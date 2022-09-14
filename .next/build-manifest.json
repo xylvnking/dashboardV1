@@ -5,8 +5,8 @@
   "devFiles": [],
   "ampDevFiles": [],
   "lowPriorityFiles": [
-    "static/8MeUmyMmvEFSRpWvo_AVY/_buildManifest.js",
-    "static/8MeUmyMmvEFSRpWvo_AVY/_ssgManifest.js"
+    "static/9e5gsmhqoa9sicwSRp1CH/_buildManifest.js",
+    "static/9e5gsmhqoa9sicwSRp1CH/_ssgManifest.js"
   ],
   "rootMainFiles": [],
   "pages": {
@@ -21,7 +21,7 @@
       "static/chunks/286-2ae633326d5abe4c.js",
       "static/chunks/675-1a7be36f87fc5181.js",
       "static/chunks/831-04dbff795cb6729b.js",
-      "static/chunks/627-b0e6102d43cdaf13.js",
+      "static/chunks/627-4edcefd1074e6336.js",
       "static/css/95c206c3df240fb9.css",
       "static/chunks/pages/index-1ede2f0156831515.js"
     ],
@@ -105,7 +105,7 @@
       "static/chunks/921-6205c8773b01936d.js",
       "static/chunks/664-ac1349529b76e794.js",
       "static/css/100d1695700caf08.css",
-      "static/chunks/pages/Components/Song-f352130a71ac6c76.js"
+      "static/chunks/pages/Components/Song-be344d37cf8ac118.js"
     ],
     "/Components/Song2": [
       "static/chunks/webpack-3433a2a2d0cf6fb6.js",
@@ -137,7 +137,7 @@
       "static/chunks/286-2ae633326d5abe4c.js",
       "static/chunks/675-1a7be36f87fc5181.js",
       "static/chunks/831-04dbff795cb6729b.js",
-      "static/chunks/627-b0e6102d43cdaf13.js",
+      "static/chunks/627-4edcefd1074e6336.js",
       "static/css/95c206c3df240fb9.css",
       "static/chunks/pages/[...artist]-105f46ca1185e2bb.js"
     ],
