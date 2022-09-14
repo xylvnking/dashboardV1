@@ -27,6 +27,14 @@ the way i ahd it in the pre alpha was cumbersome - i had to keep iterating over 
 ## next
 [dynamic catch all routes](https://nextjs.org/docs/routing/dynamic-routes)
 
+## prerendering data dependant on props
+
+i'm pretty sure next can't prerender data which is passed as a prop to a child component. 
+
+My solution has been to make sure it only renders if the data exists, but since I can't even check for the props data existence, I have to check if a piece of state exists, and then set that state with the props data with a useEffect on load.
+
+I suspect that there is a better way, but right now this makes sense and works fine. 
+
 ## images
 
 next images are weird and i don't use them enough to justify going in depth with them right now. they have to be wrapped in a div or something else to work like you'd expect, and i don't know why some css doesn't work on them at all, and some works only if you put it directly on with style={{}}. [zindex issue](https://github.com/vercel/next.js/discussions/30259)
