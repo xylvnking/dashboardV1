@@ -60,7 +60,9 @@ export default function AddSong(props) {
                     <select id='artistSelection' style={{padding: '10px', cursor: 'pointer'}} onChange={(e) => setArtistSelected(e.target.value)}>
                         <option value="" style={{backgroundColor: 'aqua'}}>--select an artist--</option>
 
-                        {props.allArtistData.map((artist, indexOfArtistInAllArtistData) => {
+                        {
+                        props.allArtistData &&
+                        props.allArtistData.map((artist, indexOfArtistInAllArtistData) => {
                             // console.log(artist)
                             return (
                                 <option key={indexOfArtistInAllArtistData} value={artist.metadata.artistName}>{artist.metadata.artistName}</option>

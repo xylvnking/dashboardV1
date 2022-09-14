@@ -16,9 +16,14 @@ const [userAuth, userAuthIsLoading, userAuthError] = useAuthState(auth)
   return (
     <main className={AudioNavStyles.container}>
         <Auth />
-        <Link href={'admin/dashboard'}>
-          <a>ADMIN</a>
-        </Link>
+        {
+          userAuth &&
+          userAuth.uid == process.env.NEXT_PUBLIC_FIREBASE_ADMIN_UID &&
+
+          <Link href={'admin/dashboard'}>
+            <a>ADMIN</a>
+          </Link>
+        }
         
         <Link href={'/'}>
           <a>HOME</a>

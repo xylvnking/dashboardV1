@@ -5,11 +5,9 @@ import { db, auth, provider } from '../../firebase-config';
 
 export default function ArtistOverview(props) {
 
-    const [artistSongs, setArtistSongs] = useState(props.artistData.songs)
+    const [artistSongs, setArtistSongs] = useState()
+    const [artistMetadataState, setArtistmetadateState] = useState()
 
-    const check = () => {
-        console.log(artistSongs)
-    }
 
     const deleteSong = async (songIndexToRemove) => {
         let tempArtistSongsArray
@@ -25,12 +23,24 @@ export default function ArtistOverview(props) {
         setArtistSongs(tempArtistSongsArray)
     }
 
+    useEffect(() => {
+
+        // loads the artists data and sets state which the ui is conditionally rendered by
+        if (props.artistData.songs) {
+            setArtistSongs(props.artistData.songs)
+        } else if (props.artistData.metadata) {
+            setArtistmetadateState(props.artistData.metadata)
+
+        }
+        
+    }, [])
+
   return (
     <main className='lightBorder'>
-        <button onClick={() => check()}>show props from artists</button>
+        
         <ul>
             {
-                // artistSongs &&
+                artistMetadataState &&
                 Object.keys(props.artistData.metadata).map((metadataField, index) => {
                 // Object.keys(artistSongs.metadata).map((metadataField, index) => {
                     // artistSongs.metadata.map((metadataField, index) => {
@@ -45,10 +55,11 @@ export default function ArtistOverview(props) {
             }
             <li></li>
         </ul>
+
+
         {
-            artistSongs &&
+            artistSongs && // this conditional allows prerendering and also stops the site from breaking if the artist has no songs yet
             artistSongs.map((songData, songIndex) => {
-                // artistSongs.map((songData, songIndex) => {
                 return (
                     <Song2 
                         key={songIndex}

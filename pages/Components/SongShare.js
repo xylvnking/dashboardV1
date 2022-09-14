@@ -26,8 +26,6 @@ export default function SongShare(props) {
         <main>
         {
             props.songData &&
-            
-            
         <div>
 
             {/* <Link href={'http://localhost:3000/' + props.artistData.metadata.artistName + '/' + props.songData.songMetadata.songName}>

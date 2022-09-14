@@ -94,7 +94,6 @@ export default function Artist(props) {
     
     <AudioNav/>
       <main>
-        <button onClick={() => check()}>CHECK</button>
         {/* <button onClick={() => }>nothing rn</button> */}
 
           {

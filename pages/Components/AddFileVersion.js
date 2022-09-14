@@ -55,14 +55,18 @@ export default function AddFileVersion(props) {
 
 
   return (
+    
     <main className='lightBorder'>
         <h3>add a file version:</h3>
+        {
+          props.songData &&
         <form style={{display: 'flex', flexDirection: 'column'}} onSubmit={addFileVersion}>
 
             {/* <label htmlFor='artistName'>artistName</label> */}
             <input type='hidden' id='artistName' name='artistName' defaultValue={props.artistName} readOnly required/>
 
             {/* <label htmlFor='songName'>songName</label> */}
+            
             <input type='hidden' id='songName' name='songName' defaultValue={props.songData.songMetadata.songName} readOnly required/>
 
             {/* <label htmlFor='fileVersionName'>file version name</label> */}
@@ -82,6 +86,7 @@ export default function AddFileVersion(props) {
 
             <button type='submit'>submit</button>
         </form>
+        }
     </main>
   )
 }

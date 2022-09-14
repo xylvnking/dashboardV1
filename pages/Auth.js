@@ -22,6 +22,12 @@ export default function Auth() {
         await signInWithPopup(auth, provider).then((result) => {
             console.log(result.user)
             // checkIfNewClient(result.user)
+            console.log(result.user.uid)
+            if (result.user.uid == process.env.NEXT_PUBLIC_FIREBASE_ADMIN_UID) {
+                window.location.replace("/admin/dashboard");
+            } else {
+                window.location.replace("/");
+            }
         })
         .catch(function (error) {
             console.error("there was an error signing in", error);
