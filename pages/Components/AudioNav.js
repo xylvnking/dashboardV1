@@ -5,8 +5,9 @@ import Auth from '../Auth'
 import Image from 'next/image';
 import Link from 'next/link'
 
+// import defaultStyles from '../../styles/Default.module.scss'
 import AudioNavStyles from '../../styles/AudioNav.module.scss'
-import defaultStyles from '../../styles/Default.module.scss'
+import artistStyles from '../../styles/Artist.module.scss'
 
 import {useAuthState} from "react-firebase-hooks/auth"
 import { db, auth, provider } from '../../firebase-config';
@@ -34,7 +35,7 @@ const [userAuth, userAuthIsLoading, userAuthError] = useAuthState(auth)
                 <Image 
                   key='yeah'
                   src={userAuth.photoURL} 
-                  className={defaultStyles.profilePhotoIcon}
+                  className={artistStyles.profilePhotoIcon}
                   alt="User Photo" 
                   width={'50px'} 
                   height={'50px'} 

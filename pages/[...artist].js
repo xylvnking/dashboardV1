@@ -6,7 +6,7 @@ import Link from 'next/link'
 
 // import styles from '../styles/Home.module.css'
 import dashStyles from '../styles/Dashboard.module.scss'
-import defaultStyles from '../styles/Default.module.scss'
+// import defaultStyles from '../styles/Default.module.scss'
 import artistStyles from '../styles/Artist.module.scss'
 
 
@@ -99,11 +99,11 @@ export default function Artist(props) {
           {
             artistData &&
             <div>
-              <div className={defaultStyles.profilePhotoIcon}>
+              <div className={artistStyles.profilePhotoIcon}>
                 {<Image 
                   key={artistData.metadata.uid}
                   src={artistData.metadata.profilePhoto} 
-                  className={defaultStyles.profilePhotoIcon}
+                  className={artistStyles.profilePhotoIcon}
                   alt="User Photo" 
                   width={'100%'} 
                   height={'100%'}

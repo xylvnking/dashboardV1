@@ -5,8 +5,8 @@
   "devFiles": [],
   "ampDevFiles": [],
   "lowPriorityFiles": [
-    "static/DNlcSm_qHulregmGKzDk7/_buildManifest.js",
-    "static/DNlcSm_qHulregmGKzDk7/_ssgManifest.js"
+    "static/8MeUmyMmvEFSRpWvo_AVY/_buildManifest.js",
+    "static/8MeUmyMmvEFSRpWvo_AVY/_ssgManifest.js"
   ],
   "rootMainFiles": [],
   "pages": {
@@ -21,8 +21,8 @@
       "static/chunks/286-2ae633326d5abe4c.js",
       "static/chunks/675-1a7be36f87fc5181.js",
       "static/chunks/831-04dbff795cb6729b.js",
-      "static/chunks/627-0a167754b04af9ea.js",
-      "static/css/491d3d37d736d85b.css",
+      "static/chunks/627-b0e6102d43cdaf13.js",
+      "static/css/95c206c3df240fb9.css",
       "static/chunks/pages/index-1ede2f0156831515.js"
     ],
     "/Auth": [
@@ -84,8 +84,8 @@
       "static/chunks/286-2ae633326d5abe4c.js",
       "static/chunks/675-1a7be36f87fc5181.js",
       "static/chunks/831-04dbff795cb6729b.js",
-      "static/css/3a727cbb867de66c.css",
-      "static/chunks/pages/Components/AudioNav-4feeb0604dc82ce7.js"
+      "static/css/95c206c3df240fb9.css",
+      "static/chunks/pages/Components/AudioNav-2177a2b8da98af8e.js"
     ],
     "/Components/FileVersion": [
       "static/chunks/webpack-3433a2a2d0cf6fb6.js",
@@ -104,8 +104,8 @@
       "static/chunks/f4d6e22f-aee797a732babfa9.js",
       "static/chunks/921-6205c8773b01936d.js",
       "static/chunks/664-ac1349529b76e794.js",
-      "static/css/ad2a4a9a0de701a9.css",
-      "static/chunks/pages/Components/Song-90bab56025ff765f.js"
+      "static/css/100d1695700caf08.css",
+      "static/chunks/pages/Components/Song-f352130a71ac6c76.js"
     ],
     "/Components/Song2": [
       "static/chunks/webpack-3433a2a2d0cf6fb6.js",
@@ -137,8 +137,8 @@
       "static/chunks/286-2ae633326d5abe4c.js",
       "static/chunks/675-1a7be36f87fc5181.js",
       "static/chunks/831-04dbff795cb6729b.js",
-      "static/chunks/627-0a167754b04af9ea.js",
-      "static/css/491d3d37d736d85b.css",
+      "static/chunks/627-b0e6102d43cdaf13.js",
+      "static/css/95c206c3df240fb9.css",
       "static/chunks/pages/[...artist]-105f46ca1185e2bb.js"
     ],
     "/_app": [
@@ -166,8 +166,8 @@
       "static/chunks/675-1a7be36f87fc5181.js",
       "static/chunks/831-04dbff795cb6729b.js",
       "static/chunks/909-9f6d4cd48514a6d0.js",
-      "static/css/3a727cbb867de66c.css",
-      "static/chunks/pages/admin/dashboard-cf59746a19f20e8b.js"
+      "static/css/95c206c3df240fb9.css",
+      "static/chunks/pages/admin/dashboard-7a520a563d386278.js"
     ],
     "/admindelete": [
       "static/chunks/webpack-3433a2a2d0cf6fb6.js",
