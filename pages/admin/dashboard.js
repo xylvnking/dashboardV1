@@ -13,13 +13,17 @@ import { doc, onSnapshot, collection, query, where, getDoc, getDocs, updateDoc }
 export default function dashboard() {
     const [userAuth, userAuthIsLoading, userAuthError] = useAuthState(auth)
     const [allArtistData, setAllArtistData] = useState()
+    const [adminIsLoggedIn, setAdminIsLoggedIn] = useState(false)
     // console.log(userAuth)
-    // console.log(process.env.NEXT_PUBLIC_FIREBASE_ADMIN_UID)
-
+    
     // check if admin and stuff
     useEffect(() => {
-        if (userAuth) {
+        // if (userAuth) {
+        if (userAuth && userAuth.uid == process.env.NEXT_PUBLIC_FIREBASE_ADMIN_UID) {
+            // console.log(process.env.NEXT_PUBLIC_FIREBASE_ADMIN_UID)
+            // console.log(userAuth.uid)
             // console.log('get a list of users here and pass it into the AddX components')
+            setAdminIsLoggedIn(true)
             const getListOfUsers = async () => {
                 const arrayOfUsersTemp = []
                 const documentsToGet = query(collection(db, "artists"));
@@ -32,36 +36,26 @@ export default function dashboard() {
             }
             getListOfUsers()
         }
-
     },[userAuth])
+
+    // console.log(process.env.NEXT_PUBLIC_FIREBASE_ADMIN_UID)
 
 
   return (
-    <main>
-        <AudioNav/>
+      <div>
+
+          <AudioNav/>
+    {adminIsLoggedIn ?
+      <main>
         <button onClick={() => console.log(allArtistData)}>log all users</button>
         {
             allArtistData &&
             allArtistData.map((artist, artistIndex) => {
                 return (
-                    
                     <ArtistOverview 
                         key={artistIndex}
                         artistData={artist}
                     />
-                    // <ul key={artistIndex}>
-                    //     <li>{artist.metadata.artistName}</li>
-                    //     <ul>{artist.songs.map((song, songIndex) => {
-                    //         return (
-                    //             <ul key={songIndex}>
-
-                    //                 <li onClick={() => console.log(`open ${song.songMetadata.songName}`)}>{song.songMetadata.songName}</li>
-                    //                 <button onClick={() => console.log(`DELETE ${song.songMetadata.songName}`)}>Delete</button>
-                    //             </ul>
-                    //         )
-                    //     })}</ul>
-
-                    // </ul>
                 )
             })
         }
@@ -81,5 +75,10 @@ export default function dashboard() {
 
         
     </main>
+    
+                :
+                'hey this is my zone go back home!'
+}
+      </div>
   )
 }

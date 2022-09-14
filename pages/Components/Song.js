@@ -52,7 +52,6 @@ export default function Song(props) {
 
     const getShareableLink = () => {
         navigator.clipboard.writeText('http://localhost:3000/' + props.artistData.metadata.artistName + '/' + props.songData.songMetadata.songName)
-        
     }
     // console.log(props.artistData)
 
