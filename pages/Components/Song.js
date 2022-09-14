@@ -2,8 +2,9 @@ import React, {useState, useEffect} from 'react'
 import TextareaAutosize from 'react-textarea-autosize';
 import artistStyles from '../../styles/Artist.module.scss'
 
-import { db, auth, provider } from '../../firebase-config';
+import { db, auth, provider, storage } from '../../firebase-config';
 import { doc, onSnapshot, collection, query, where, getDoc, getDocs, updateDoc } from "firebase/firestore";
+import { getStorage, ref, getDownloadURL } from "firebase/storage";
 
 import Link from 'next/link'
 
@@ -15,6 +16,18 @@ export default function Song(props) {
     const [isTyping, setIsTyping] = useState(false)
     const [textAreaIsActive, setTextAreaIsActive] = useState(false)
     const [fileVersionIndexSelected, setFileVersionIndexSelected] = useState()
+    
+    const getCurrentDownloadUrl = async (pathRef) => {
+        const fileVersionRef = ref(storage, pathRef);
+        
+        getDownloadURL(fileVersionRef)
+        .then((url) => {
+            return url
+        }).catch((error) => {
+            console.log(error)
+            return null
+        })
+    }
 
     const handleTyping = (eventValue, songIndex, fileVersionIndex) => {
         setIsTyping(true)
@@ -23,9 +36,6 @@ export default function Song(props) {
         artistDataClone.songs[songIndex].fileVersions[fileVersionIndex].revisionNote = eventValue
         props.setArtistData(artistDataClone)
         const docRef = doc(db, 'artists', props.artistData.metadata.artistName); // get reference to doc
-
-        // console.log(artistDataClone)
-
         
         clearTimeout(revisionTypingTimeout2) // clear timer
         revisionTypingTimeout2 = setTimeout(() => { // use timer
@@ -94,6 +104,8 @@ export default function Song(props) {
                                 <ul>
                                     <li>file version name: {x.fileVersionName}</li>
                                     <li>date added: {Date(x.dateAdded)}</li>
+                                    <li>{console.log(x.pathReference)}</li>
+                                    <audio preload='none' controls src={getCurrentDownloadUrl(x.pathReference)}></audio>
                                     {/* <li>Job type: {x.jobType}</li> */}
                                     {/* <li>file version index {fileVersionIndex}</li> */}
                                     {// ONLY SHOW TEXT AREA FOR MOST RECENT FILE VERSION [0]

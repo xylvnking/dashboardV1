@@ -162,3 +162,8 @@ it works the way i have it but i have a feeling it would be a better idea to do 
 i'm going to continue building the app this way so its complete and see if there's anything else, but yeah this will probably unfortunately not be the version clients see. 
 
 
+
+
+
+
+

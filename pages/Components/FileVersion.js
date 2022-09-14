@@ -62,7 +62,7 @@ export default function FileVersion(props) {
                 <li>{Date(props.fileVersion.dateAdded)}</li>
                 <li><strong>Revision note:</strong></li>
                 <li>{props.fileVersion.revisionNote}</li>
-                <audio preload='none' crossOrigin='use-credentials' controls src={downloadURL}></audio>
+                <audio preload='none' controls src={downloadURL}></audio>
 
             </ul>
         {/* <ul>

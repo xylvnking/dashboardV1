@@ -76,7 +76,7 @@ export const fakeData = [
                         dateAdded: new Date(),
                         revisionNote: `this is a revision note for first song`,
                         jobType: `mix`,
-                        pathReference: 'masters/YEAHHHhhhhhh',
+                        pathReference: 'masters/smallAudioFile',
                     },
                     {
                         artistName: 'dylanking6132',
@@ -85,7 +85,7 @@ export const fakeData = [
                         dateAdded: new Date(),
                         revisionNote: `this is a revision note for second song`,
                         jobType: `mix`,
-                        pathReference: 'masters/YEAHHHhhhhhh',
+                        pathReference: 'masters/smallAudioFile',
                     },
                     {
                         artistName: 'dylanking6132',
@@ -94,7 +94,7 @@ export const fakeData = [
                         dateAdded: new Date(),
                         revisionNote: `this is a revision note for third song`,
                         jobType: `mix`,
-                        pathReference: 'masters/YEAHHHhhhhhh',
+                        pathReference: 'masters/smallAudioFile',
                     },
                     
                 ]
@@ -120,7 +120,7 @@ export const fakeData = [
                         dateAdded: new Date(),
                         revisionNote: `this is a revision note for first song`,
                         jobType: `mix`,
-                        pathReference: 'masters/YEAHHHhhhhhh',
+                        pathReference: 'masters/smallAudioFile',
                     },
                     {
                         artistName: 'dylanking6132',
@@ -129,7 +129,7 @@ export const fakeData = [
                         dateAdded: new Date(),
                         revisionNote: `this is a revision note for second song`,
                         jobType: `mix`,
-                        pathReference: 'masters/YEAHHHhhhhhh',
+                        pathReference: 'masters/smallAudioFile',
                     },
                     {
                         artistName: 'dylanking6132',
@@ -138,7 +138,7 @@ export const fakeData = [
                         dateAdded: new Date(),
                         revisionNote: `this is a revision note for third song`,
                         jobType: `mix`,
-                        pathReference: 'masters/YEAHHHhhhhhh',
+                        pathReference: 'masters/smallAudioFile',
                     },
                     
                 ]
@@ -165,7 +165,7 @@ export const fakeData = [
                         dateAdded: new Date(),
                         revisionNote: `this is a revision note for first song`,
                         jobType: `mix`,
-                        pathReference: 'masters/YEAHHHhhhhhh',
+                        pathReference: 'masters/smallAudioFile',
                     },
                     {
                         artistName: 'dylanking6132',
@@ -174,7 +174,7 @@ export const fakeData = [
                         dateAdded: new Date(),
                         revisionNote: `this is a revision note for second song`,
                         jobType: `mix`,
-                        pathReference: 'masters/YEAHHHhhhhhh',
+                        pathReference: 'masters/smallAudioFile',
                     },
                     {
                         artistName: 'dylanking6132',
@@ -183,7 +183,7 @@ export const fakeData = [
                         dateAdded: new Date(),
                         revisionNote: `this is a revision note for third song`,
                         jobType: `mix`,
-                        pathReference: 'masters/YEAHHHhhhhhh',
+                        pathReference: 'masters/smallAudioFile',
                     },
                     
                 ]
@@ -210,7 +210,7 @@ export const fakeData = [
                         dateAdded: new Date(),
                         revisionNote: `this is a revision note for first song`,
                         jobType: `mix`,
-                        pathReference: 'masters/YEAHHHhhhhhh',
+                        pathReference: 'masters/smallAudioFile',
                     },
                     {
                         artistName: 'dylanking6132',
@@ -219,7 +219,7 @@ export const fakeData = [
                         dateAdded: new Date(),
                         revisionNote: `this is a revision note for second song`,
                         jobType: `mix`,
-                        pathReference: 'masters/YEAHHHhhhhhh',
+                        pathReference: 'masters/smallAudioFile',
                     },
                     {
                         artistName: 'dylanking6132',
@@ -228,7 +228,7 @@ export const fakeData = [
                         dateAdded: new Date(),
                         revisionNote: `this is a revision note for third song`,
                         jobType: `mix`,
-                        pathReference: 'masters/YEAHHHhhhhhh',
+                        pathReference: 'masters/smallAudioFile',
                     },
                     
                 ]
